@@ -6,7 +6,7 @@ var health
 var maxSpeed = 200
 var groundAcceleration = 20
 
-var pushForce = 100
+@export var pushForce = 100
 
 func _process(delta: float) -> void:
 	movementInputs()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_1fplq"]
 [ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="2_bre8u"]
-[ext_resource type="PackedScene" uid="uid://ehkftaqd7e0v" path="res://wall_prop.tscn" id="3_7jhep"]
+[ext_resource type="PackedScene" uid="uid://dhrrrt68obmno" path="res://components/prop/prop.tscn" id="3_7jhep"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
 
@@ -21,6 +21,13 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1200, 96)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_bre8u")]
+position = Vector2(696, 379)
+pushForce = 100000
 
-[node name="WallProp" parent="." instance=ExtResource("3_7jhep")]
-position = Vector2(312, 160)
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(3.295, 3.295)
+
+[node name="Prop" parent="." instance=ExtResource("3_7jhep")]
+position = Vector2(636, 288)
+mass = 200.0
+center_of_mass = Vector2(0, 5)
