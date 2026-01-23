@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://qu7atsbfaxcn"]
+
+[ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_1fplq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 566)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_gfanc")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_1fplq")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1200, 96)
