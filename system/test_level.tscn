@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_1fplq"]
 [ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="2_bre8u"]
-[ext_resource type="PackedScene" uid="uid://ehkftaqd7e0v" path="res://wall_prop.tscn" id="3_7jhep"]
+[ext_resource type="PackedScene" uid="uid://ehkftaqd7e0v" path="res://components/props/wall_prop.tscn" id="3_7jhep"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
 
