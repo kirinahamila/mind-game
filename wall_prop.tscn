@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ehkftaqd7e0v"]
+
+[ext_resource type="Script" uid="uid://vn88c1fdbisf" path="res://wall_prop.gd" id="1_xggss"]
+[ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="2_xmb8c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex8ln"]
+
+[node name="WallProp" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_xggss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.65)
+texture = ExtResource("2_xmb8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_ex8ln")
