@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-var health
+@onready var hurtBox = $hurtBox
+
+var health = 100
 
 #Base Stats
 var maxSpeed = 200
@@ -8,13 +10,44 @@ var groundAcceleration = 20
 
 @export var pushForce = 100
 
+#Iframe vars
+var remTars: Array[Area2D]
+var iFrames = 0.25
+
+
 func _process(delta: float) -> void:
+	damageScan()
 	movementInputs()
 	
 	gravity()
 	move_and_slide()
 	pushingProps()
 
+func damageScan():
+	if hurtBox.has_overlapping_areas():
+		var f = hurtBox.get_overlapping_areas().size()
+		
+		for i in f:
+			if !remTars.has(hurtBox.get_overlapping_areas()[i]):
+				health -= hurtBox.get_overlapping_areas()[i].damage
+				remTars.append(hurtBox.get_overlapping_areas()[i])
+				remTarDecay(hurtBox.get_overlapping_areas()[i])
+				
+				takeKnockback(hurtBox.get_overlapping_areas()[i])
+
+func remTarDecay(hitBox):
+	await get_tree().create_timer(iFrames).timeout
+	remTars.erase(hitBox)
+
+func takeKnockback(hitBox):
+	var length = global_position - hitBox.global_position
+	var impulse = length.normalized() * hitBox.knockback
+	
+	if impulse.y != 0:
+		impulse.y -= 100
+	
+	print(impulse)
+	velocity += impulse
 
 func movementInputs():
 	if Input.is_action_pressed("right") && velocity.x <= maxSpeed:
@@ -34,13 +67,17 @@ func gravity():
 		if is_on_floor() && abs(velocity.x) >= 20:
 			velocity.x /= 1.1
 		else:
-			velocity.x = 0
+			velocity.x /= 1.1
 	
 	if abs(velocity.x) > maxSpeed+groundAcceleration:
 		if is_on_floor() && abs(velocity.x) >= 20:
 			velocity.x /= 1.1
 		else:
-			velocity.x = 0
+			velocity.x /= 1.1
+	
+	if velocity.y < -500:
+		velocity.y = -500
+
 		
 
 #Must be AFTER move and slide 

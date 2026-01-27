@@ -33,8 +33,8 @@ shape = SubResource("CircleShape2D_3n1pg")
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("3_4fo42")
-damage = 100
-knockback = 1000
+damage = 10
+knockback = 100
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox" unique_id=1749686928]
