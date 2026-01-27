@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2t5mg0vfp4pb"]
 
-[ext_resource type="Script" path="res://wall_prop.gd" id="1_xggss"]
+[ext_resource type="Script" uid="uid://vn88c1fdbisf" path="res://components/props/wall_prop.gd" id="1_xggss"]
 [ext_resource type="Texture2D" uid="uid://6eltonyldrfs" path="res://assets/textures/props/large/rock.png" id="2_xmb8c"]
 
 [node name="WallProp" type="RigidBody2D"]

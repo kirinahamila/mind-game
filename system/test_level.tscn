@@ -22,7 +22,6 @@ region_rect = Rect2(0, 0, 1200, 96)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_bre8u")]
 position = Vector2(696, 379)
-pushForce = 100000
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3.295, 3.295)
