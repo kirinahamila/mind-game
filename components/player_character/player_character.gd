@@ -1,12 +1,19 @@
 extends CharacterBody2D
 
 @onready var hurtBox = $hurtBox
+@onready var anim = $AnimationPlayer
+@onready var weapons = $weapons
+
+@onready var baseballBat = $weapons/baseballBat
 
 var health = 100
 
 #Base Stats
 var maxSpeed = 200
 var groundAcceleration = 20
+
+#Upgrades:
+var curWeapon = "baseballBat"
 
 @export var pushForce = 100
 
@@ -18,6 +25,7 @@ var iFrames = 0.25
 func _process(delta: float) -> void:
 	damageScan()
 	movementInputs()
+	attack()
 	
 	gravity()
 	move_and_slide()
@@ -46,7 +54,6 @@ func takeKnockback(hitBox):
 	if impulse.y != 0:
 		impulse.y -= 100
 	
-	print(impulse)
 	velocity += impulse
 
 func movementInputs():
@@ -78,12 +85,26 @@ func gravity():
 	if velocity.y < -500:
 		velocity.y = -500
 
-		
-
 #Must be AFTER move and slide 
 func pushingProps():
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_force(-c.get_normal() * pushForce)
-		
+
+func attack():
+	if Input.is_action_just_pressed("place"):
+		match curWeapon:
+			"baseballBat":
+				baseballBatAttack()
+			"":
+				baseballBat.hide()
+				baseballBat.monitorable = false
+
+func baseballBatAttack():
+	weapons.look_at(get_global_mouse_position())
+	anim.play("baseballBatAttack")
+
+func _ready() -> void:
+	$weapons/baseballBat/Sprite2D.hide()
+	$weapons/baseballBat/CollisionShape2D.disabled = true

@@ -1,6 +1,7 @@
 class_name Entity extends RigidBody2D
 
 var health
+var maxHealth
 
 func Entity():
 	pass
