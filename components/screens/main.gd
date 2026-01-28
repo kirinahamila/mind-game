@@ -34,11 +34,11 @@ func _ready() -> void:
 	
 	packageList = [gameplayElements, startupElements, propSelectionElements, propPlacementElements, gameOverElements]
 	
-	gameState = "startup"
+	changeGameState("startup")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	updateGamestate()
+	pass
 
 func updateGamestate():
 	
@@ -83,18 +83,21 @@ func unloadScenes(scenePackage: Array):
 			scenePackage[i].hide()
 			scenePackage[i].process_mode = 4
 
+func changeGameState(newState):
+	gameState = newState
+	updateGamestate()
 
 func _on_start_screen_start_game() -> void:
-		gameState = "propSelection"
+		changeGameState("propSelection")
 
 func _on_prop_selection_menu_prop_placement_time() -> void:
 	inventory = propSelectionMenu.curDefenses
-	gameState = "propPlacement"
+	changeGameState("propPlacement")
 	propPlacementMenu.setCurProps(inventory)
 
 func _on_prop_placement_menu_props_placed() -> void:
-	gameState = "gameplay"
+	changeGameState("gameplay")
 	gameWorld.activeWave = true
 
 func _on_character_body_2d_dead() -> void:
-	gameState = "gameOver"
+	changeGameState("gameOver")

@@ -28,7 +28,7 @@ var remTars: Array[Area2D]
 var iFrames = 0.25
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	damageScan()
 	movementInputs()
 	attack()

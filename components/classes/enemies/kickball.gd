@@ -6,7 +6,7 @@ func _ready() -> void:
 	Enemy($sightBox, $hitBox, $hurtBox, $ProgressBar, 250)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	damageScan()
 	setupHealthBar()
 	
