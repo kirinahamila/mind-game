@@ -2,6 +2,7 @@ class_name Prop
 extends RigidBody2D
 
 @export var sprite: Sprite2D
+
 # The number and accuracy of the generated polygons; lower is higher.
 @export_range(0,10) var collision_detail: float = 2
 

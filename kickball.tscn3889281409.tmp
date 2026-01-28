@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cnwe58eu7t0on"]
+
+[ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="1_3n1pg"]
+[ext_resource type="Script" uid="uid://ho0uoh5psefs" path="res://kickball.gd" id="1_5ojd4"]
+[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/classes/attack.gd" id="3_4fo42"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ojd4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3n1pg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fo42"]
+
+[node name="kickball" type="RigidBody2D" unique_id=1958488047]
+script = ExtResource("1_5ojd4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=365041855]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_3n1pg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=642909352]
+scale = Vector2(1, 0.75)
+shape = SubResource("CapsuleShape2D_5ojd4")
+
+[node name="sightBox" type="Area2D" parent="." unique_id=1952749251]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sightBox" unique_id=1396374356]
+scale = Vector2(25, 25)
+shape = SubResource("CircleShape2D_3n1pg")
+
+[node name="hitBox" type="Area2D" parent="." unique_id=1762987828]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("3_4fo42")
+damage = 10
+knockback = 100
+metadata/_custom_type_script = "uid://bvwm4ltpenltr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox" unique_id=1749686928]
+scale = Vector2(1.1, 0.825)
+shape = SubResource("CapsuleShape2D_4fo42")

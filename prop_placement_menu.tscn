@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bi2m4kjyf7rcr"]
+
+[ext_resource type="Script" uid="uid://dw7swlw2tp3eh" path="res://prop_placement_menu.gd" id="1_orno3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7sabg"]
+font_size = 40
+
+[node name="propPlacementMenu" type="Node2D" unique_id=1310519041]
+script = ExtResource("1_orno3")
+
+[node name="SelectionPanel" type="Control" parent="." unique_id=1241335051]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="SelectionPanel" unique_id=460365658]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 900.0
+offset_bottom = 300.0
+
+[node name="grid" type="HBoxContainer" parent="SelectionPanel" unique_id=1645947401]
+layout_mode = 0
+offset_left = 262.5
+offset_top = 62.5
+offset_right = 887.5
+offset_bottom = 212.5
+
+[node name="Label" type="Label" parent="SelectionPanel" unique_id=543670032]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 225.0
+offset_right = 875.0
+offset_bottom = 280.0
+text = "Place Your Defenses!"
+label_settings = SubResource("LabelSettings_7sabg")
+horizontal_alignment = 1

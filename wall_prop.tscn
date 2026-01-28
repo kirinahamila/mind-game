@@ -1,12 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://2t5mg0vfp4pb"]
+[gd_scene format=3 uid="uid://ehkftaqd7e0v"]
 
-[ext_resource type="Script" path="res://wall_prop.gd" id="1_xggss"]
-[ext_resource type="Texture2D" uid="uid://6eltonyldrfs" path="res://assets/textures/props/large/rock.png" id="2_xmb8c"]
+[ext_resource type="Texture2D" uid="uid://6eltonyldrfs" path="res://assets/textures/props/large/rock.png" id="1_xggss"]
 
-[node name="WallProp" type="RigidBody2D"]
+[sub_resource type="GDScript" id="GDScript_xmb8c"]
+script/source = "extends Props
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="WallProp" type="RigidBody2D" unique_id=746528890]
 collision_layer = 4
 collision_mask = 7
-script = ExtResource("1_xggss")
+mass = 0.1
+script = SubResource("GDScript_xmb8c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xmb8c")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1898575500]
+texture = ExtResource("1_xggss")

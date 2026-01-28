@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cnwe58eu7t0on"]
+
+[ext_resource type="Script" uid="uid://ho0uoh5psefs" path="res://components/classes/enemies/kickball.gd" id="1_5ojd4"]
+[ext_resource type="Texture2D" uid="uid://p7kqvbn2pgix" path="res://assets/textures/enemies/green_kickball.png" id="2_vqf13"]
+[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/classes/attack.gd" id="3_4fo42"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ojd4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3n1pg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fo42"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at3qa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqf13"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dflr"]
+bg_color = Color(0.33333325, 1, 0, 1)
+
+[node name="kickball" type="RigidBody2D" unique_id=1958488047]
+script = ExtResource("1_5ojd4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=365041855]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_vqf13")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=642909352]
+scale = Vector2(1, 0.75)
+shape = SubResource("CapsuleShape2D_5ojd4")
+
+[node name="sightBox" type="Area2D" parent="." unique_id=1952749251]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sightBox" unique_id=1396374356]
+scale = Vector2(25, 25)
+shape = SubResource("CircleShape2D_3n1pg")
+
+[node name="hitBox" type="Area2D" parent="." unique_id=1762987828]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_4fo42")
+damage = 10
+knockback = 1000
+metadata/_custom_type_script = "uid://bvwm4ltpenltr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox" unique_id=1749686928]
+scale = Vector2(1.1, 0.825)
+shape = SubResource("CapsuleShape2D_4fo42")
+
+[node name="hurtBox" type="Area2D" parent="." unique_id=1232903915]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox" unique_id=373891116]
+scale = Vector2(1.1, 0.825)
+shape = SubResource("CapsuleShape2D_at3qa")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1589431949]
+offset_left = -13.0
+offset_top = -18.0
+offset_right = 13.0
+offset_bottom = -14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vqf13")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8dflr")
+show_percentage = false
