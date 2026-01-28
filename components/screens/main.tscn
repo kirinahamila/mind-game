@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://qix88flvs5gw"]
+
+[ext_resource type="Script" uid="uid://dq8gao1tb2mpb" path="res://components/screens/main.gd" id="1_qjbxo"]
+[ext_resource type="PackedScene" uid="uid://dssi8t7pjujhh" path="res://components/screens/start_screen.tscn" id="2_bp6g8"]
+[ext_resource type="PackedScene" uid="uid://gkg6swxubgc4" path="res://components/screens/game_world.tscn" id="3_o6jpp"]
+[ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="4_frqux"]
+
+[node name="main" type="Node2D" unique_id=1596336714]
+script = ExtResource("1_qjbxo")
+
+[node name="startScreen" parent="." unique_id=897664657 instance=ExtResource("2_bp6g8")]
+
+[node name="GameWorld" parent="." unique_id=337179226 instance=ExtResource("3_o6jpp")]
+
+[node name="CharacterBody2D" parent="." unique_id=2045797745 instance=ExtResource("4_frqux")]
+
+[connection signal="startGame" from="startScreen" to="." method="_on_start_screen_start_game"]

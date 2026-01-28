@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://qu7atsbfaxcn"]
 
-[ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_1fplq"]
-[ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="2_bre8u"]
-[ext_resource type="PackedScene" uid="uid://dhrrrt68obmno" path="res://components/prop/prop.tscn" id="3_7jhep"]
-[ext_resource type="PackedScene" uid="uid://cnwe58eu7t0on" path="res://components/classes/enemies/kickball.tscn" id="4_4uonf"]
+[ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_r8f0l"]
+[ext_resource type="PackedScene" uid="uid://dhrrrt68obmno" path="res://components/prop/prop.tscn" id="2_vi3pk"]
+[ext_resource type="PackedScene" uid="uid://cnwe58eu7t0on" path="res://components/classes/enemies/kickball.tscn" id="3_1hgfc"]
+[ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="4_vt0ms"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
 
@@ -16,19 +16,19 @@ position = Vector2(0, 566)
 shape = SubResource("WorldBoundaryShape2D_gfanc")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=408883450]
-texture = ExtResource("1_1fplq")
+texture = ExtResource("1_r8f0l")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1200, 96)
 
-[node name="Prop" parent="." unique_id=630369459 instance=ExtResource("3_7jhep")]
+[node name="Prop" parent="." unique_id=630369459 instance=ExtResource("2_vi3pk")]
 position = Vector2(636, 288)
 center_of_mass = Vector2(0, 5)
 
-[node name="kickball" parent="." unique_id=1958488047 instance=ExtResource("4_4uonf")]
+[node name="kickball" parent="." unique_id=1958488047 instance=ExtResource("3_1hgfc")]
 position = Vector2(492, 364)
 
-[node name="CharacterBody2D" parent="." unique_id=2045797745 instance=ExtResource("2_bre8u")]
+[node name="CharacterBody2D" parent="." unique_id=2045797745 instance=ExtResource("4_vt0ms")]
 position = Vector2(168, 292)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2065717196]
