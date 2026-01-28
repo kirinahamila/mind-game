@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 	
 	findPlayer()
 	hopBehavior(100)
+	
+	if health <= 0:
+		queue_free()

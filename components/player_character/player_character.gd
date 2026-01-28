@@ -1,12 +1,18 @@
 extends CharacterBody2D
 
+signal dead
+
+@onready var tag = preload("res://components/classes/tag.tscn")
+
 @onready var hurtBox = $hurtBox
 @onready var anim = $AnimationPlayer
 @onready var weapons = $weapons
 
 @onready var baseballBat = $weapons/baseballBat
+@onready var hpBar = $ProgressBar
 
-var health = 100
+var maxHealth = 100.0
+var health = 100.0
 
 #Base Stats
 var maxSpeed = 200
@@ -26,6 +32,8 @@ func _process(delta: float) -> void:
 	damageScan()
 	movementInputs()
 	attack()
+	setupHealthBar()
+	checkDeath()
 	
 	gravity()
 	move_and_slide()
@@ -38,6 +46,7 @@ func damageScan():
 		for i in f:
 			if !remTars.has(hurtBox.get_overlapping_areas()[i]):
 				health -= hurtBox.get_overlapping_areas()[i].damage
+				createTag(hurtBox.get_overlapping_areas()[i].damage, "damage")
 				remTars.append(hurtBox.get_overlapping_areas()[i])
 				remTarDecay(hurtBox.get_overlapping_areas()[i])
 				
@@ -104,6 +113,26 @@ func attack():
 func baseballBatAttack():
 	weapons.look_at(get_global_mouse_position())
 	anim.play("baseballBatAttack")
+
+func setupHealthBar():
+	if health == maxHealth:
+		hpBar.hide()
+	else:
+		hpBar.show()
+		hpBar.max_value = maxHealth
+		hpBar.value = health
+
+func createTag(text, type):
+	var damageTag = tag.instantiate()
+	
+	get_parent().add_child(damageTag)
+	damageTag.Tag(text, type)
+	
+	damageTag.global_position = global_position
+
+func checkDeath():
+	if health <= 0:
+		emit_signal("dead")
 
 func _ready() -> void:
 	$weapons/baseballBat/Sprite2D.hide()

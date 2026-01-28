@@ -3,13 +3,24 @@ extends Node2D
 @onready var startScreen = $startScreen
 @onready var gameWorld = $GameWorld
 @onready var playerCharacter = $CharacterBody2D
+@onready var propSelectionMenu = $propSelectionMenu
+@onready var propPlacementMenu = $propPlacementMenu
+@onready var gameOverScreen = $gameOverScreen
 
 var gameplayElements
 var startupElements
+var propSelectionElements
+var propPlacementElements
+var gameOverElements
+
+var packageList
 
 #can be changed to a different string to signify which gamestate the game is in
 #uses the updateGameState() function
 var gameState = ""
+
+#Game Variables:
+var inventory
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +28,11 @@ func _ready() -> void:
 	#These have to be put into the ready function
 	gameplayElements = [gameWorld, playerCharacter]
 	startupElements = [startScreen]
+	propSelectionElements = [propSelectionMenu, gameWorld]
+	propPlacementElements = [propPlacementMenu, gameWorld]
+	gameOverElements = [gameOverScreen]
+	
+	packageList = [gameplayElements, startupElements, propSelectionElements, propPlacementElements, gameOverElements]
 	
 	gameState = "startup"
 
@@ -25,16 +41,35 @@ func _process(delta: float) -> void:
 	updateGamestate()
 
 func updateGamestate():
+	
 	#Make sure to always use the unload function before the load function
 	match gameState:
 		"":
 			pass
 		"startup":
-			unloadScenes(gameplayElements)
-			loadScenes(startupElements)
+			unloadAllBut(startupElements)
 		"gameplay":
-			unloadScenes(startupElements)
-			loadScenes(gameplayElements)
+			unloadAllBut(gameplayElements)
+		"propSelection":
+			unloadAllBut(propSelectionElements)
+		"propPlacement":
+			unloadAllBut(propPlacementElements)
+		"gameOver":
+			unloadAllBut(gameOverElements)
+
+func unloadAllBut(package):
+	var toLoad: Array
+	
+	var f = packageList.size()
+	for i in f:
+		if packageList[i] != package:
+			unloadScenes(packageList[i])
+		else:
+			toLoad.append(packageList[i])
+	
+	var f2 = toLoad.size()
+	for i2 in f2:
+		loadScenes(toLoad[i2])
 
 func loadScenes(scenePackage: Array):
 	var f = scenePackage.size()
@@ -50,4 +85,16 @@ func unloadScenes(scenePackage: Array):
 
 
 func _on_start_screen_start_game() -> void:
-		gameState = "gameplay"
+		gameState = "propSelection"
+
+func _on_prop_selection_menu_prop_placement_time() -> void:
+	inventory = propSelectionMenu.curDefenses
+	gameState = "propPlacement"
+	propPlacementMenu.setCurProps(inventory)
+
+func _on_prop_placement_menu_props_placed() -> void:
+	gameState = "gameplay"
+	gameWorld.activeWave = true
+
+func _on_character_body_2d_dead() -> void:
+	gameState = "gameOver"

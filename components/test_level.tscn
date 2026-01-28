@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://qu7atsbfaxcn"]
 
 [ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_r8f0l"]
-[ext_resource type="PackedScene" uid="uid://dhrrrt68obmno" path="res://components/prop/prop.tscn" id="2_vi3pk"]
 [ext_resource type="PackedScene" uid="uid://cnwe58eu7t0on" path="res://components/classes/enemies/kickball.tscn" id="3_1hgfc"]
+[ext_resource type="PackedScene" uid="uid://7hua065o2arm" path="res://components/prop/rockProp.tscn" id="4_r8f0l"]
 [ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="4_vt0ms"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
@@ -21,10 +21,6 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1200, 96)
 
-[node name="Prop" parent="." unique_id=630369459 instance=ExtResource("2_vi3pk")]
-position = Vector2(636, 288)
-center_of_mass = Vector2(0, 5)
-
 [node name="kickball" parent="." unique_id=1958488047 instance=ExtResource("3_1hgfc")]
 position = Vector2(492, 364)
 
@@ -32,3 +28,6 @@ position = Vector2(492, 364)
 position = Vector2(168, 292)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2065717196]
+
+[node name="Node2D" parent="." unique_id=1491167098 instance=ExtResource("4_r8f0l")]
+position = Vector2(200, 200)

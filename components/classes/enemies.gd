@@ -16,7 +16,7 @@ var hurtBox: Area2D
 var hpBar: ProgressBar
 
 var targetLocation: Vector2
-var baseLocation = Vector2(0,0)
+var baseLocation = Vector2(575,400)
 
 var remTars: Array[Area2D]
 var iFrames = 0.5
