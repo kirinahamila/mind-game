@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c20c5k4mjfgyv"]
+
+[ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="1_2h8y4"]
+[ext_resource type="Script" uid="uid://bel0njc8niymu" path="res://components/prop/crossbow.gd" id="1_drjl2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drjl2"]
+
+[node name="crossbow" type="RigidBody2D" unique_id=1416310162]
+script = ExtResource("1_drjl2")
+propSprite = ExtResource("1_2h8y4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2093703662]
+scale = Vector2(0.3, 0.25)
+texture = ExtResource("1_2h8y4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067468283]
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_drjl2")
+
+[node name="arrowSpawn" type="Node2D" parent="." unique_id=638823808]
+position = Vector2(45, 0)

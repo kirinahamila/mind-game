@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var camera = $Camera2D
+
 @onready var startScreen = $startScreen
 @onready var gameWorld = $GameWorld
 @onready var playerCharacter = $CharacterBody2D
@@ -98,6 +100,8 @@ func _on_prop_selection_menu_prop_placement_time() -> void:
 func _on_prop_placement_menu_props_placed() -> void:
 	changeGameState("gameplay")
 	gameWorld.activeWave = true
+	camera.zoom = Vector2(0.75, 0.75)
+	camera.position.y -= 200
 
 func _on_character_body_2d_dead() -> void:
 	changeGameState("gameOver")

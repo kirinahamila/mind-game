@@ -71,7 +71,7 @@ func movementInputs():
 	if Input.is_action_pressed("left") && velocity.x >= -maxSpeed:
 		velocity.x += -groundAcceleration
 	if Input.is_action_just_pressed("up") && is_on_floor():
-		velocity.y -= 500
+		velocity.y -= 300
 
 func gravity():
 	if !is_on_floor() && velocity.y < 500:

@@ -11,6 +11,8 @@ var curProps: Array
 
 var heldProp: RigidBody2D
 
+var targetRotation = 0
+
 func setCurProps(props):
 	curProps = props
 	updateHotbar()
@@ -62,6 +64,11 @@ func holdProp():
 		heldProp.mass = 0.0
 		heldProp.gravity_scale = 0.0
 		heldProp.linear_damp = 10
+		heldProp.angular_damp = 10
+		
+		if heldProp.rotation_degrees != targetRotation:
+			heldProp.constant_torque = (targetRotation - heldProp.rotation) * 10000
+			print(targetRotation)
 		
 		var impulse = get_global_mouse_position() - heldProp.global_position
 		impulse = impulse*100
@@ -70,8 +77,19 @@ func holdProp():
 			heldProp.mass = propMass
 			heldProp.gravity_scale = 1.0
 			heldProp.linear_damp = 0
+			heldProp.angular_damp = 0
 			panel.show()
 			panel.process_mode = 0
 			curProps.erase(heldProp)
 			heldProp = null
 			updateHotbar()
+		
+		if Input.is_action_pressed("left"):
+			targetRotation -= 2*(PI/180)
+			if targetRotation <= -PI:
+				targetRotation = PI - 0.1
+			
+		elif Input.is_action_pressed("right"):
+			targetRotation += 2*(PI/180)
+			if targetRotation >= PI:
+				targetRotation = -PI + 0.1

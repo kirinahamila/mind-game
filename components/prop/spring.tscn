@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cigmxotit36ik"]
+
+[ext_resource type="Script" uid="uid://chax74m01dy22" path="res://components/prop/spring.gd" id="1_boyml"]
+[ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="1_ka4py"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boyml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpppm"]
+
+[node name="spring" type="RigidBody2D" unique_id=599040440]
+collision_mask = 7
+script = ExtResource("1_boyml")
+propSprite = ExtResource("1_ka4py")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=918219934]
+scale = Vector2(0.3, 0.15)
+texture = ExtResource("1_ka4py")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1527883701]
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_boyml")
+
+[node name="launchZone" type="Area2D" parent="." unique_id=282240422]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="launchZone" unique_id=1484485204]
+position = Vector2(0, -16)
+scale = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_hpppm")
