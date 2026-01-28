@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bc2326i03te6u"]
+[gd_scene load_steps=0 format=3 uid="uid://bc2326i03te6u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1glp"]
 font_size = 55

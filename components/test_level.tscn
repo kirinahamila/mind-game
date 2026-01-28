@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://qu7atsbfaxcn"]
+[gd_scene load_steps=6 format=3 uid="uid://dbruy03wnjgh8"]
 
 [ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_r8f0l"]
 [ext_resource type="PackedScene" uid="uid://cnwe58eu7t0on" path="res://components/classes/enemies/kickball.tscn" id="3_1hgfc"]
@@ -7,27 +7,27 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
 
-[node name="TestLevel" type="Node2D" unique_id=1540894982]
+[node name="TestLevel" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=254255153]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 566)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1567062246]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_gfanc")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=408883450]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 texture = ExtResource("1_r8f0l")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1200, 96)
 
-[node name="kickball" parent="." unique_id=1958488047 instance=ExtResource("3_1hgfc")]
+[node name="kickball" parent="." instance=ExtResource("3_1hgfc")]
 position = Vector2(492, 364)
 
-[node name="CharacterBody2D" parent="." unique_id=2045797745 instance=ExtResource("4_vt0ms")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_vt0ms")]
 position = Vector2(168, 292)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2065717196]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
-[node name="Node2D" parent="." unique_id=1491167098 instance=ExtResource("4_r8f0l")]
+[node name="Node2D" parent="." instance=ExtResource("4_r8f0l")]
 position = Vector2(200, 200)

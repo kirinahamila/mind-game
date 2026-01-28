@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dhbpnjlrsgxv2"]
+[gd_scene load_steps=0 format=3 uid="uid://dhbpnjlrsgxv2"]
 
-[ext_resource type="Script" uid="uid://b7tef8376gbkv" path="res://components/screens/prop_selection_menu.gd" id="1_806t1"]
+[ext_resource type="Script" uid="uid://b7tef8376gbkv" path="res://system/ui/selection/prop_selection_menu.gd" id="1_806t1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u811w"]
 font_size = 50

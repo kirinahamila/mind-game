@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bi2m4kjyf7rcr"]
+[gd_scene load_steps=0 format=3 uid="uid://bi2m4kjyf7rcr"]
 
 [ext_resource type="Script" uid="uid://dw7swlw2tp3eh" path="res://prop_placement_menu.gd" id="1_orno3"]
 

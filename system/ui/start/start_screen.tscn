@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dssi8t7pjujhh"]
+[gd_scene load_steps=0 format=3 uid="uid://dssi8t7pjujhh"]
 
-[ext_resource type="Script" uid="uid://d0lqfftvh02iu" path="res://components/screens/start_screen.gd" id="1_t6s6p"]
+[ext_resource type="Script" uid="uid://d0lqfftvh02iu" path="res://system/ui/start/start_screen.gd" id="1_t6s6p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hsg2v"]
 font_size = 70

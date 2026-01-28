@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cagftdk7urc4k"]
+[gd_scene load_steps=0 format=3 uid="uid://cagftdk7urc4k"]
 
 [ext_resource type="Script" uid="uid://xqo4gya5wokm" path="res://components/classes/tag.gd" id="1_tps74"]
 
