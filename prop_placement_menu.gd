@@ -9,7 +9,7 @@ signal propsPlaced
 
 var curProps: Array
 
-var heldProp
+var heldProp: RigidBody2D
 
 func setCurProps(props):
 	curProps = props
@@ -58,10 +58,18 @@ func placeProp(prop):
 
 func holdProp():
 	if heldProp != null:
-		heldProp.freeze = true
-		heldProp.position = get_global_mouse_position()
+		var propMass = heldProp.mass
+		heldProp.mass = 0.0
+		heldProp.gravity_scale = 0.0
+		heldProp.linear_damp = 10
+		
+		var impulse = get_global_mouse_position() - heldProp.global_position
+		impulse = impulse*100
+		heldProp.apply_central_force(impulse)
 		if Input.is_action_just_pressed("place"):
-			heldProp.freeze = false
+			heldProp.mass = propMass
+			heldProp.gravity_scale = 1.0
+			heldProp.linear_damp = 0
 			panel.show()
 			panel.process_mode = 0
 			curProps.erase(heldProp)
