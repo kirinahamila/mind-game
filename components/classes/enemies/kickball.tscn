@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ho0uoh5psefs" path="res://components/classes/enemies/kickball.gd" id="1_5ojd4"]
 [ext_resource type="Texture2D" uid="uid://p7kqvbn2pgix" path="res://assets/textures/enemies/green_kickball.png" id="2_vqf13"]
-[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/classes/attack.gd" id="3_4fo42"]
+[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_4fo42"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ojd4"]
 

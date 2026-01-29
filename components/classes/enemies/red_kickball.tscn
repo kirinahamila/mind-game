@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://7xjsysmjwa50"]
+
+[ext_resource type="Script" uid="uid://302jkpch6fhb" path="res://components/classes/enemies/red_kickball.gd" id="1_bu8t8"]
+[ext_resource type="Texture2D" uid="uid://dcl2cbd0i0m38" path="res://assets/textures/enemies/red_kickball.png" id="1_fjm1v"]
+[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="2_87j5q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87j5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fjm1v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjm1v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bu8t8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_87j5q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu8t8"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rafg"]
+bg_color = Color(0.33333325, 1, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0rafg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("explosion/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("explosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("explosion/CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_bu8t8"]
+resource_name = "explode"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("explosion/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("explosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("explosion/CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(25, 25), Vector2(10, 10), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rafg"]
+_data = {
+&"RESET": SubResource("Animation_0rafg"),
+&"explode": SubResource("Animation_bu8t8")
+}
+
+[node name="redKickball" type="RigidBody2D" unique_id=871884471]
+script = ExtResource("1_bu8t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118333478]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_fjm1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353615600]
+rotation = 1.5707964
+scale = Vector2(1.5, 1.125)
+shape = SubResource("CapsuleShape2D_87j5q")
+
+[node name="sightBox" type="Area2D" parent="." unique_id=1707621600]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sightBox" unique_id=1644900128]
+scale = Vector2(25, 25)
+shape = SubResource("CircleShape2D_fjm1v")
+
+[node name="hitBox" type="Area2D" parent="." unique_id=2078623619]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("2_87j5q")
+damage = 20
+knockback = 1000
+metadata/_custom_type_script = "uid://bvwm4ltpenltr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox" unique_id=1147639911]
+rotation = 1.5707964
+scale = Vector2(1.6, 1.2)
+shape = SubResource("CapsuleShape2D_fjm1v")
+
+[node name="hurtBox" type="Area2D" parent="." unique_id=265454530]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox" unique_id=1322592386]
+rotation = 1.5707964
+scale = Vector2(1.6, 1.2)
+shape = SubResource("CapsuleShape2D_bu8t8")
+
+[node name="explosion" type="Area2D" parent="." unique_id=234075406]
+collision_layer = 16
+collision_mask = 64
+script = ExtResource("2_87j5q")
+damage = 60
+knockback = 2000
+shovePower = 750
+metadata/_custom_type_script = "uid://bvwm4ltpenltr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explosion" unique_id=1221704398]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_87j5q")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=407241829]
+offset_left = -13.0
+offset_top = -24.0
+offset_right = 13.0
+offset_bottom = -20.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bu8t8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0rafg")
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=671547348]
+libraries/ = SubResource("AnimationLibrary_0rafg")

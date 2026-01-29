@@ -25,7 +25,7 @@ var curWeapon = "baseballBat"
 
 #Iframe vars
 var remTars: Array[Area2D]
-var iFrames = 0.25
+var iFrames = 0.5
 
 
 func _physics_process(delta: float) -> void:

@@ -10,6 +10,8 @@ var jumping = false
 var damage
 var attackRange
 
+var attackState = false
+
 var sightBox: Area2D
 var hitBox: Area2D
 var hurtBox: Area2D
@@ -24,14 +26,15 @@ var iFrames = 0.5
 #Fill this array with behaviors that this enemy will use
 var behaviors = []
 
-func Enemy(sightBoxp: Area2D, hitBoxp: Area2D, hurtBoxp: Area2D, hpBarp: ProgressBar, jumpHeightp):
+func Enemy(sightBoxp: Area2D, hitBoxp: Area2D, hurtBoxp: Area2D, hpBarp: ProgressBar, jumpHeightp, maxHealthp, difficultyp):
 	sightBox = sightBoxp
 	hitBox = hitBoxp
 	hurtBox = hurtBoxp
 	hpBar = hpBarp
 	jumpHeight = jumpHeightp
+	#difficulty = difficultyp
 	
-	maxHealth = 100
+	maxHealth = maxHealthp
 	health = maxHealth
 	
 
@@ -109,3 +112,14 @@ func hopBehavior(power):
 		await get_tree().create_timer(1.0).timeout
 		hop(power, targetLocation)
 		jumping = false
+
+func flyBehavior(targetHeight):
+	if global_position.y > targetHeight && !attackState:
+		apply_central_force(Vector2(0,-jumpHeight*10))
+	
+	if abs(targetLocation.x-global_position.x) > 75:
+		var impulse = targetLocation-global_position
+		impulse = impulse.normalized()*250
+		apply_central_force(Vector2(impulse.x, 0))
+	else:
+		attackState = true

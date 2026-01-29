@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c20c5k4mjfgyv" path="res://components/prop/crossbow.tscn" id="5_vi3pk"]
 [ext_resource type="PackedScene" uid="uid://cigmxotit36ik" path="res://components/prop/spring.tscn" id="6_1hgfc"]
 [ext_resource type="PackedScene" uid="uid://b2l4afjo01eu6" path="res://components/prop/fan.tscn" id="7_vt0ms"]
-[ext_resource type="PackedScene" uid="uid://dlndt7nsjcgjc" path="res://components/classes/enemies/seagull.tscn" id="8_tdyha"]
-[ext_resource type="PackedScene" uid="uid://7xjsysmjwa50" path="res://components/classes/enemies/red_kickball.tscn" id="9_fvc00"]
+[ext_resource type="PackedScene" uid="uid://dlndt7nsjcgjc" path="res://seagull.tscn" id="8_tdyha"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
 
@@ -48,6 +47,3 @@ position = Vector2(76, 93)
 
 [node name="seagull" parent="." unique_id=1162075046 instance=ExtResource("8_tdyha")]
 position = Vector2(-100, 400)
-
-[node name="redKickball" parent="." unique_id=871884471 instance=ExtResource("9_fvc00")]
-position = Vector2(888, 309)

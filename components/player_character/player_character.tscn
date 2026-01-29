@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo4iy5u2vckqj" path="res://components/player_character/player_character.gd" id="1_m6yna"]
 [ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="2_w37qy"]
-[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/classes/attack.gd" id="3_q1otq"]
+[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_q1otq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1otq"]
 
@@ -109,10 +109,11 @@ shape = SubResource("CapsuleShape2D_xc0r5")
 
 [node name="baseballBat" type="Area2D" parent="weapons" unique_id=433327835]
 collision_layer = 32
-collision_mask = 0
+collision_mask = 64
 script = ExtResource("3_q1otq")
 damage = 25
 knockback = 400
+shovePower = 250
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="weapons/baseballBat" unique_id=1559155583]
