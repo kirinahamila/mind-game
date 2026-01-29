@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var kickBall = preload("res://components/classes/enemies/kickball.tscn")
 @onready var seagull = preload("res://components/classes/enemies/seagull.tscn")
+@onready var redKickball = preload("res://components/classes/enemies/red_kickball.tscn")
 
 @onready var spawn1 = $enemySpawner1
 @onready var spawn2 = $enemySpawner2
@@ -21,7 +22,7 @@ var curWaveDifficulty = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	enemyPool = [kickBall, seagull]
+	enemyPool = [kickBall, seagull, redKickball]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
