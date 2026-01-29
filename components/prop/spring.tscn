@@ -8,8 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpppm"]
 
 [node name="spring" type="RigidBody2D" unique_id=599040440]
-collision_layer = 65
-collision_mask = 7
+collision_layer = 321
+collision_mask = 263
 script = ExtResource("1_boyml")
 propSprite = ExtResource("1_ka4py")
 

@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://blfxxfymgecsd" path="res://components/prop/arrowbody.gd" id="1_aiig8"]
 [ext_resource type="Script" uid="uid://cmane2y6cbd4y" path="res://components/prop/arrow.gd" id="2_x1kgr"]
-[ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="3_miun3"]
+[ext_resource type="Texture2D" uid="uid://h128h1621nc4" path="res://assets/textures/props/trap/arrow.png" id="3_aiig8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a6ax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ndhl"]
 
 [node name="Arrow" type="RigidBody2D" unique_id=1278058563]
-collision_layer = 65
-collision_mask = 7
+collision_layer = 321
+collision_mask = 263
 script = ExtResource("1_aiig8")
 
 [node name="hitBox" type="Area2D" parent="." unique_id=340748630]
@@ -21,8 +21,8 @@ damage = 50
 knockback = 500
 
 [node name="Sprite2D" type="Sprite2D" parent="hitBox" unique_id=1694175615]
-scale = Vector2(0.12, 0.06)
-texture = ExtResource("3_miun3")
+scale = Vector2(1.2, 0.6)
+texture = ExtResource("3_aiig8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox" unique_id=2100919076]
 scale = Vector2(0.9, 0.45)
