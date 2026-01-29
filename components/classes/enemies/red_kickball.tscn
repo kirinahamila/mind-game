@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://302jkpch6fhb" path="res://components/classes/enemies/red_kickball.gd" id="1_bu8t8"]
 [ext_resource type="Texture2D" uid="uid://dcl2cbd0i0m38" path="res://assets/textures/enemies/red_kickball.png" id="1_fjm1v"]
 [ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="2_87j5q"]
+[ext_resource type="Texture2D" uid="uid://kc33wxb4c156" path="res://assets/textures/effects/Explosion_Spritesheet1.png" id="4_2sg61"]
+[ext_resource type="Texture2D" uid="uid://c0org6lvjpf2e" path="res://assets/textures/effects/Explosion_Spritesheet2.png" id="5_xjduy"]
+[ext_resource type="Texture2D" uid="uid://7jowgbn055of" path="res://assets/textures/effects/Explosion_Spritesheet3.png" id="6_pfbw1"]
+[ext_resource type="Texture2D" uid="uid://b6rmswef1noqb" path="res://assets/textures/effects/Explosion_Spritesheet4.png" id="7_l5846"]
+[ext_resource type="Texture2D" uid="uid://bm6sqdvn4onav" path="res://assets/textures/effects/Explosion_Spritesheet5.png" id="8_pfbw1"]
+[ext_resource type="Texture2D" uid="uid://dr5yxhft1a0dx" path="res://assets/textures/effects/Explosion_Spritesheet6.png" id="9_l5846"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87j5q"]
 
@@ -58,6 +64,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(10, 10)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("explosion/Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_2sg61")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("explosion/Sprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bu8t8"]
 resource_name = "explode"
@@ -97,6 +127,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(10, 10), Vector2(25, 25), Vector2(10, 10), Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("explosion/Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_2sg61"), ExtResource("5_xjduy"), ExtResource("6_pfbw1"), ExtResource("7_l5846"), ExtResource("8_pfbw1"), ExtResource("9_l5846")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("explosion/Sprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0rafg"]
@@ -159,6 +213,11 @@ metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explosion" unique_id=1221704398]
 scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_87j5q")
+
+[node name="Sprite2D" type="Sprite2D" parent="explosion" unique_id=2142209069]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_2sg61")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=407241829]
 offset_left = -13.0

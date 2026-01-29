@@ -1,6 +1,7 @@
 extends Enemy
 
 @onready var anim = $AnimationPlayer
+@onready var explosion = $explosion/CollisionShape2D
 
 var difficulty = 25
 
@@ -10,6 +11,7 @@ var waitingForExplode
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Enemy($sightBox, $hitBox, $hurtBox, $ProgressBar, 200, 150, 25)
+	explosion.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
