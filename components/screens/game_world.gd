@@ -1,7 +1,10 @@
 extends Node2D
 
+@onready var levelWaves = $waveHandler
+
 @onready var kickBall = preload("res://components/classes/enemies/kickball.tscn")
 @onready var seagull = preload("res://components/classes/enemies/seagull.tscn")
+
 
 @onready var spawn1 = $enemySpawner1
 @onready var spawn2 = $enemySpawner2
@@ -24,17 +27,16 @@ func spawnCycle():
 	if !spawning && activeWave:
 		spawning = true
 		
-		
-		enemySelect = randi_range(0,enemyPool.size()-1)
-		var newEnemy = enemyPool[enemySelect].instantiate()
-		print(newEnemy)
+		var newEnemy = levelWaves.chooseEnemy()
 		get_parent().add_child(newEnemy)
 		
-		var spawner = randi_range(1, 2)
-		if spawner == 1:
-			newEnemy.global_position = spawn1.global_position
-		else:
-			newEnemy.global_position = spawn2.global_position
+		
+		if newEnemy != null:
+			var spawner = randi_range(1, 2)
+			if spawner == 1:
+				newEnemy.global_position = spawn1.global_position
+			else:
+				newEnemy.global_position = spawn2.global_position
 		
 		await get_tree().create_timer(2.0).timeout
 		spawning = false

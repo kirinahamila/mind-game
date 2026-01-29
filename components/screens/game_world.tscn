@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://tv6nvr8mafqt" path="res://components/screens/game_world.gd" id="1_6p460"]
 [ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_hly68"]
+[ext_resource type="Script" uid="uid://dnkyc28pyf6aq" path="res://components/classes/wave.gd" id="3_v4opm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bvgre"]
 
@@ -25,3 +26,7 @@ position = Vector2(-500, 400)
 
 [node name="enemySpawner2" type="Node2D" parent="." unique_id=1781352454]
 position = Vector2(1650, 400)
+
+[node name="waveHandler" type="Node2D" parent="." unique_id=1137909681]
+script = ExtResource("3_v4opm")
+metadata/_custom_type_script = "uid://dnkyc28pyf6aq"

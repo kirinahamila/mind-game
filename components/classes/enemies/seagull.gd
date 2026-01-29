@@ -4,10 +4,12 @@ extends Enemy
 @onready var explosion = $explosion
 
 var waitingForExplosion = false
+var difficulty = 15
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Enemy($sightBox, $hitBox, $hurtBox, $ProgressBar, 100, 30)
+	Enemy($sightBox, $hitBox, $hurtBox, $ProgressBar, 100, 30, 15)
 	
 	$explosion/CollisionShape2D.disabled = true
 	explosion.hide()

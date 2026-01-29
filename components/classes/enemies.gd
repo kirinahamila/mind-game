@@ -26,12 +26,13 @@ var iFrames = 0.5
 #Fill this array with behaviors that this enemy will use
 var behaviors = []
 
-func Enemy(sightBoxp: Area2D, hitBoxp: Area2D, hurtBoxp: Area2D, hpBarp: ProgressBar, jumpHeightp, maxHealthp):
+func Enemy(sightBoxp: Area2D, hitBoxp: Area2D, hurtBoxp: Area2D, hpBarp: ProgressBar, jumpHeightp, maxHealthp, difficultyp):
 	sightBox = sightBoxp
 	hitBox = hitBoxp
 	hurtBox = hurtBoxp
 	hpBar = hpBarp
 	jumpHeight = jumpHeightp
+	#difficulty = difficultyp
 	
 	maxHealth = maxHealthp
 	health = maxHealth

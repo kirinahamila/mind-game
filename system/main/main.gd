@@ -99,6 +99,7 @@ func _on_prop_selection_menu_prop_placement_time() -> void:
 
 func _on_prop_placement_menu_props_placed() -> void:
 	changeGameState("gameplay")
+	gameWorld.levelWaves.Wave(gameWorld.enemyPool, 100)
 	gameWorld.activeWave = true
 	camera.zoom = Vector2(0.75, 0.75)
 	camera.position.y -= 200
