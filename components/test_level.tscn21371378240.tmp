@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dbruy03wnjgh8"]
+[gd_scene format=3 uid="uid://qu7atsbfaxcn"]
 
 [ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_r8f0l"]
 [ext_resource type="PackedScene" uid="uid://cnwe58eu7t0on" path="res://components/classes/enemies/kickball.tscn" id="3_1hgfc"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="4_vt0ms"]
 [ext_resource type="PackedScene" uid="uid://c20c5k4mjfgyv" path="res://components/prop/crossbow.tscn" id="5_vi3pk"]
 [ext_resource type="PackedScene" uid="uid://cigmxotit36ik" path="res://components/prop/spring.tscn" id="6_1hgfc"]
-[ext_resource type="PackedScene" uid="uid://b2l4afjo01eu6" path="res://components/prop/fan.tscn" id="7_vt0ms"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
 
@@ -40,6 +39,3 @@ position = Vector2(-6, 256)
 
 [node name="spring" parent="." unique_id=599040440 instance=ExtResource("6_1hgfc")]
 position = Vector2(790, 542)
-
-[node name="fan" parent="." unique_id=920613413 instance=ExtResource("7_vt0ms")]
-position = Vector2(76, 93)

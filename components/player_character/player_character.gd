@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal dead
 
-@onready var tag = preload("res://components/classes/tag.tscn")
+@onready var tag = preload("res://components/tag/tag.tscn")
 
 @onready var hurtBox = $hurtBox
 @onready var anim = $AnimationPlayer

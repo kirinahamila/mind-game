@@ -2,11 +2,13 @@ extends Node2D
 
 signal propPlacementTime
 
-@onready var propCard = preload("res://components/classes/prop_card.tscn")
+@onready var propCard = preload("res://system/ui/prop_card/prop_card.tscn")
 
 @onready var rock = preload("res://components/prop/rockProp.tscn")
 @onready var crossbow = preload("res://components/prop/crossbow.tscn")
 @onready var spring = preload("res://components/prop/spring.tscn")
+@onready var platForm = preload("res://components/prop/platform.tscn")
+@onready var fan = preload("res://components/prop/fan.tscn")
 
 @onready var descBox = $descBox
 @onready var grid = $GridContainer
@@ -18,7 +20,7 @@ var defensesOptions: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	defensesOptions = [rock, crossbow, spring]
+	defensesOptions = [rock, crossbow, spring, platForm, fan]
 	makeCards(defensesOptions)
 
 

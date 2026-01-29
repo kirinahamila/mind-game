@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://gkg6swxubgc4"]
+
+[ext_resource type="Script" uid="uid://tv6nvr8mafqt" path="res://components/screens/game_world.gd" id="1_6p460"]
+[ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_hly68"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bvgre"]
+
+[node name="GameWorld" type="Node2D" unique_id=337179226]
+script = ExtResource("1_6p460")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=911146479]
+position = Vector2(0, 500)
+scale = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=42043101]
+shape = SubResource("WorldBoundaryShape2D_bvgre")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=516791812]
+position = Vector2(316.49997, 77.49997)
+scale = Vector2(36.75, 4.84375)
+texture = ExtResource("1_hly68")
+
+[node name="enemySpawner1" type="Node2D" parent="." unique_id=497858278]
+position = Vector2(-500, 400)
+
+[node name="enemySpawner2" type="Node2D" parent="." unique_id=1781352454]
+position = Vector2(1650, 400)

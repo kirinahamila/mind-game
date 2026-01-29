@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://crngp8n7wqce2"]
+[gd_scene load_steps=2 format=3 uid="uid://crngp8n7wqce2"]
 
-[ext_resource type="Script" uid="uid://be2mnwsexh775" path="res://components/classes/prop_card.gd" id="1_deny4"]
+[ext_resource type="Script" uid="uid://be2mnwsexh775" path="res://system/ui/prop_card/prop_card.gd" id="1_41buy"]
 
-[node name="propCard" type="Button" unique_id=1785928423]
+[node name="propCard" type="Button"]
 custom_minimum_size = Vector2(125, 150)
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,22 +11,21 @@ offset_right = -1027.0
 offset_bottom = -498.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_deny4")
-metadata/_custom_type_script = "uid://be2mnwsexh775"
+script = ExtResource("1_41buy")
 
-[node name="Panel" type="Panel" parent="." unique_id=10759680]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 125.0
 offset_bottom = 150.0
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=540536856]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 12.5
 offset_top = 12.5
 offset_right = 112.5
 offset_bottom = 112.5
 
-[node name="Label" type="Label" parent="." unique_id=1891027761]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_top = 125.0
 offset_right = 125.0

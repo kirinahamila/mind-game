@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://qix88flvs5gw"]
+
+[ext_resource type="Script" uid="uid://dq8gao1tb2mpb" path="res://system/main/main.gd" id="1_qjbxo"]
+[ext_resource type="PackedScene" uid="uid://dssi8t7pjujhh" path="res://system/ui/start/start_screen.tscn" id="2_bp6g8"]
+[ext_resource type="PackedScene" uid="uid://gkg6swxubgc4" path="res://components/screens/game_world.tscn" id="3_o6jpp"]
+[ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="4_frqux"]
+[ext_resource type="PackedScene" uid="uid://dhbpnjlrsgxv2" path="res://system/ui/selection/prop_selection_menu.tscn" id="5_bp6g8"]
+[ext_resource type="PackedScene" uid="uid://bi2m4kjyf7rcr" path="res://system/ui/placement/prop_placement_menu.tscn" id="6_o6jpp"]
+[ext_resource type="PackedScene" uid="uid://bc2326i03te6u" path="res://system/ui/game_over_screen.tscn" id="7_frqux"]
+
+[node name="main" type="Node2D" unique_id=2143028418]
+script = ExtResource("1_qjbxo")
+
+[node name="startScreen" parent="." unique_id=1440866352 instance=ExtResource("2_bp6g8")]
+
+[node name="GameWorld" parent="." unique_id=353822467 instance=ExtResource("3_o6jpp")]
+
+[node name="CharacterBody2D" parent="." unique_id=1505080417 instance=ExtResource("4_frqux")]
+position = Vector2(569, 0)
+
+[node name="propSelectionMenu" parent="." unique_id=572619620 instance=ExtResource("5_bp6g8")]
+
+[node name="propPlacementMenu" parent="." unique_id=931240621 instance=ExtResource("6_o6jpp")]
+
+[node name="gameOverScreen" parent="." unique_id=931113666 instance=ExtResource("7_frqux")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=551239718]
+position = Vector2(576, 324)
+
+[connection signal="startGame" from="startScreen" to="." method="_on_start_screen_start_game"]
+[connection signal="dead" from="CharacterBody2D" to="." method="_on_character_body_2d_dead"]
+[connection signal="propPlacementTime" from="propSelectionMenu" to="." method="_on_prop_selection_menu_prop_placement_time"]
+[connection signal="propsPlaced" from="propPlacementMenu" to="." method="_on_prop_placement_menu_props_placed"]

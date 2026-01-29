@@ -1,7 +1,7 @@
-class_name Props extends RigidBody2D
+extends RigidBody2D
 
-var propName
-var propSprite
+var propName = "Platform"
+@export var propSprite: Texture2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

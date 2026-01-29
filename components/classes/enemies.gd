@@ -1,6 +1,6 @@
 class_name Enemy extends Entity
 
-@onready var tag = preload("res://components/classes/tag.tscn")
+@onready var tag = preload("res://components/tag/tag.tscn")
 
 var speed
 var jumpHeight
