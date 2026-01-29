@@ -6,6 +6,9 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bvgre"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_v4opm"]
+font_size = 40
+
 [node name="GameWorld" type="Node2D" unique_id=337179226]
 script = ExtResource("1_6p460")
 
@@ -30,3 +33,10 @@ position = Vector2(1650, 400)
 [node name="waveHandler" type="Node2D" parent="." unique_id=1137909681]
 script = ExtResource("3_v4opm")
 metadata/_custom_type_script = "uid://dnkyc28pyf6aq"
+
+[node name="Label" type="Label" parent="." unique_id=204769567]
+offset_left = -150.0
+offset_top = -300.0
+offset_right = -110.0
+offset_bottom = -245.0
+label_settings = SubResource("LabelSettings_v4opm")
