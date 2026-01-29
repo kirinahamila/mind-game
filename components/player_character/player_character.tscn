@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo4iy5u2vckqj" path="res://components/player_character/player_character.gd" id="1_m6yna"]
 [ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="2_w37qy"]
-[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/classes/attack.gd" id="3_q1otq"]
+[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_q1otq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1otq"]
 

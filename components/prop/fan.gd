@@ -19,7 +19,5 @@ func _process(delta: float) -> void:
 		for i in fanBox.get_overlapping_bodies().size():
 			if fanBox.get_overlapping_bodies()[i] is RigidBody2D:
 				fanBox.get_overlapping_bodies()[i].apply_central_force(force)
-				print(force)
 			if fanBox.get_overlapping_bodies()[i] is CharacterBody2D:
 				fanBox.get_overlapping_bodies()[i].velocity += force/100
-				print(force)

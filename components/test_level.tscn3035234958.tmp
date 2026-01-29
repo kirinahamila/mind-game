@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c20c5k4mjfgyv" path="res://components/prop/crossbow.tscn" id="5_vi3pk"]
 [ext_resource type="PackedScene" uid="uid://cigmxotit36ik" path="res://components/prop/spring.tscn" id="6_1hgfc"]
 [ext_resource type="PackedScene" uid="uid://b2l4afjo01eu6" path="res://components/prop/fan.tscn" id="7_vt0ms"]
-[ext_resource type="PackedScene" uid="uid://dlndt7nsjcgjc" path="res://components/classes/enemies/seagull.tscn" id="8_tdyha"]
+[ext_resource type="PackedScene" uid="uid://dlndt7nsjcgjc" path="res://seagull.tscn" id="8_tdyha"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfanc"]
 
