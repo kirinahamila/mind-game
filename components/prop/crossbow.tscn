@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drjl2"]
 
 [node name="crossbow" type="RigidBody2D" unique_id=1416310162]
+collision_layer = 65
 script = ExtResource("1_drjl2")
 propSprite = ExtResource("1_2h8y4")
 

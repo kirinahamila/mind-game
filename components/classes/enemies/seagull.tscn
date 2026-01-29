@@ -163,10 +163,11 @@ libraries/ = SubResource("AnimationLibrary_e8e1x")
 
 [node name="explosion" type="Area2D" parent="." unique_id=1837659058]
 collision_layer = 16
-collision_mask = 0
+collision_mask = 64
 script = ExtResource("3_gm26f")
 damage = 40
 knockback = 700
+shovePower = 500
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explosion" unique_id=1651270823]

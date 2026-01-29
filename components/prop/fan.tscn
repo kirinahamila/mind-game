@@ -8,6 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qoasc"]
 
 [node name="fan" type="RigidBody2D" unique_id=920613413]
+collision_layer = 65
 script = ExtResource("1_7l2ec")
 propSprite = ExtResource("2_3ml7w")
 

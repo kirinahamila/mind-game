@@ -9,6 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ndhl"]
 
 [node name="Arrow" type="RigidBody2D" unique_id=1278058563]
+collision_layer = 65
 collision_mask = 7
 script = ExtResource("1_aiig8")
 

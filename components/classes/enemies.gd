@@ -122,5 +122,3 @@ func flyBehavior(targetHeight):
 		apply_central_force(Vector2(impulse.x, 0))
 	else:
 		attackState = true
-		print("kaboom?")
-	
