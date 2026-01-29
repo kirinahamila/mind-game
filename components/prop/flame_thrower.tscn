@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cph5af4xpbv34"]
+
+[ext_resource type="Script" uid="uid://bn8k3rrtqbm7l" path="res://components/prop/flame_thrower.gd" id="1_7sh6p"]
+[ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="1_oorc0"]
+[ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_72abo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oorc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc1ib"]
+
+[node name="flameThrower" type="RigidBody2D" unique_id=871465232]
+script = ExtResource("1_7sh6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472275326]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_oorc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1067793831]
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_oorc0")
+
+[node name="Attack" type="Area2D" parent="." unique_id=1726445772]
+script = ExtResource("3_72abo")
+metadata/_custom_type_script = "uid://bvwm4ltpenltr"
+
+[node name="Sprite2D" type="Sprite2D" parent="Attack" unique_id=1661935214]
+position = Vector2(100, -100)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 0.15)
+texture = ExtResource("1_oorc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1522132552]
+position = Vector2(100, -100)
+rotation = 0.7853982
+scale = Vector2(1, 13)
+shape = SubResource("RectangleShape2D_wc1ib")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=270505067]
