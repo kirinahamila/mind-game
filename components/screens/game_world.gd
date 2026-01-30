@@ -1,5 +1,7 @@
 extends Node2D
 
+signal waveProgress
+
 @onready var levelWaves = $waveHandler
 @onready var label = $Label
 
@@ -12,6 +14,7 @@ extends Node2D
 
 var spawning = false
 var activeWave = false
+var waveChanging = false
 
 var enemyPool
 var enemySelect
@@ -28,13 +31,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	spawnCycle()
 	updateLabel()
+	print(currentWave%5)
 
 func spawnCycle():
 	if !spawning && activeWave:
 		spawning = true
 		
 		var newEnemy = levelWaves.chooseEnemy()
-		get_parent().add_child(newEnemy)
+		levelWaves.add_child(newEnemy)
 		
 		
 		if newEnemy != null:
@@ -50,11 +54,23 @@ func spawnCycle():
 		await get_tree().create_timer(2.0-waveTime).timeout
 		spawning = false
 		
-		if newEnemy == null:
+		if newEnemy == null && !waveChanging && currentWave % 5 != 0:
+			waveChanging = true
+			await get_tree().create_timer(5.0).timeout
 			currentWave += 1
 			curWaveDifficulty += 25
 			levelWaves.Wave(enemyPool, curWaveDifficulty)
-			print(currentWave)
+			waveChanging = false
+		
+		if levelWaves.get_children().size() <= 0 && currentWave % 5 == 0:
+			waveChanging = true
+			currentWave += 1
+			curWaveDifficulty += 100
+			waveChanging = false
+			activeWave = false
+			emit_signal("waveProgress")
+			
+		
 
 func updateLabel():
 	label.text = "Current Wave: " + str(currentWave)

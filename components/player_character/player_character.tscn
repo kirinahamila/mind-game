@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bo4iy5u2vckqj" path="res://components/player_character/player_character.gd" id="1_m6yna"]
 [ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="2_w37qy"]
 [ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_q1otq"]
+[ext_resource type="Texture2D" uid="uid://8s4eotshy7ea" path="res://assets/textures/player/bat.png" id="4_xc0r5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1otq"]
 
@@ -123,8 +124,8 @@ shape = SubResource("RectangleShape2D_w37qy")
 
 [node name="Sprite2D" type="Sprite2D" parent="weapons/baseballBat" unique_id=517906080]
 position = Vector2(45, 0)
-scale = Vector2(0.45, 0.15)
-texture = ExtResource("2_w37qy")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_xc0r5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474630574]
 libraries/ = SubResource("AnimationLibrary_xc0r5")

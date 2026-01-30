@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@onready var anim = $AnimationPlayer
+
 @onready var launchZone = $launchZone
 
 var propName = "Spring"
@@ -15,6 +17,7 @@ func _process(delta: float) -> void:
 	if launchZone.has_overlapping_bodies():
 		for i in launchZone.get_overlapping_bodies().size():
 			if launchZone.get_overlapping_bodies()[i] is RigidBody2D:
-				launchZone.get_overlapping_bodies()[i].apply_central_impulse(Vector2(0,-250))
+				launchZone.get_overlapping_bodies()[i].apply_central_impulse(Vector2(0,-150))
 			if launchZone.get_overlapping_bodies()[i] is CharacterBody2D:
 				launchZone.get_overlapping_bodies()[i].velocity += Vector2(0,-1000)
+		anim.play("springLaunch")

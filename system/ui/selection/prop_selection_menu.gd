@@ -9,18 +9,23 @@ signal propPlacementTime
 @onready var spring = preload("res://components/prop/spring.tscn")
 @onready var platForm = preload("res://components/prop/platform.tscn")
 @onready var fan = preload("res://components/prop/fan.tscn")
+@onready var flameThrower = preload("res://components/prop/flame_thrower.tscn")
 
 @onready var descBox = $descBox
 @onready var grid = $GridContainer
 
 var defenseNum = 5
+var totalDefenses = 5
 var curDefenses: Array
 
 var defensesOptions: Array
 
+var midGameOptions: Array
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	defensesOptions = [rock, crossbow, spring, platForm, fan]
+	defensesOptions = [rock, crossbow, spring, platForm, fan, flameThrower]
+	midGameOptions.append_array(defensesOptions)
 	makeCards(defensesOptions)
 
 
@@ -28,6 +33,17 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	findSelectedProp()
 	updateDescBox()
+
+func midWaveSetup():
+	defenseNum = 3
+	totalDefenses = 3
+	midGameOptions.clear()
+	for i in 3:
+		var random = randi_range(0, defensesOptions.size()-1)
+		if !midGameOptions.has(defensesOptions[random]):
+			midGameOptions.append(defensesOptions[random])
+	
+	makeCards(midGameOptions)
 
 func updateDescBox():
 	descBox.text = ""
@@ -42,24 +58,32 @@ func updateDescBox():
 			descBox.text += "- \n\n"
 
 func makeCards(propArray):
+	clearGrid()
+	curDefenses.clear()
 	var f = propArray.size()
 	for i in f:
 		var newCard = propCard.instantiate()
-		var propType = defensesOptions[i].instantiate()
+		var propType = propArray[i].instantiate()
 		grid.add_child(newCard)
 		newCard.PropCard(propType.propName, propType.propSprite)
 
 func findSelectedProp():
 	if Input.is_action_just_pressed("place") && defenseNum > 0:
-		var f = defensesOptions.size()
+		var f = grid.get_children().size()
 		for i in f:
 			if grid.get_child(i).selected:
-				curDefenses.append(defensesOptions[i].instantiate())
+				curDefenses.append(midGameOptions[i].instantiate())
 				defenseNum -= 1
 
+func clearGrid():
+	var f = grid.get_child_count()
+	for i in f:
+		grid.get_child(i).queue_free()
+
 func _on_remove_button_pressed() -> void:
-	if defenseNum < 5:
-		defenseNum = 5
+	
+	if defenseNum < totalDefenses:
+		defenseNum = totalDefenses
 		curDefenses.clear()
 
 func _on_continue_button_pressed() -> void:
