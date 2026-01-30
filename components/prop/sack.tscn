@@ -9,6 +9,7 @@ size = Vector2(26.0089, 25.013306)
 [node name="Node2D" type="RigidBody2D" unique_id=1149848671]
 collision_layer = 833
 collision_mask = 263
+mass = 30.0
 script = ExtResource("1_k48bp")
 propSprite = ExtResource("2_k48bp")
 propName = "Sack"
