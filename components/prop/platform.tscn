@@ -10,6 +10,7 @@ size = Vector2(60, 4)
 scale = Vector2(3, 3)
 collision_layer = 833
 collision_mask = 257
+mass = 60.0
 script = ExtResource("1_bif05")
 propSprite = ExtResource("2_bif05")
 propName = "Platform"
