@@ -94,6 +94,18 @@ func holdProp():
 			#heldProp.constant_torque = (targetRotation - heldProp.rotation) * 10000
 			#print(targetRotation)
 		
+		if Input.is_action_pressed("left"):
+			heldProp.apply_torque_impulse(-250.0*heldProp.mass)
+			#targetRotation -= 2*(PI/180)
+			#if targetRotation <= -PI:
+				#targetRotation = PI - 0.1
+			
+		elif Input.is_action_pressed("right"):
+			heldProp.apply_torque_impulse(250.0*heldProp.mass)
+			#targetRotation += 2*(PI/180)
+			#if targetRotation >= PI:
+				#targetRotation = -PI + 0.1
+		
 		var impulse = get_global_mouse_position() - heldProp.global_position
 		impulse = impulse*100*heldProp.mass
 		heldProp.apply_central_force(impulse)
@@ -108,17 +120,6 @@ func holdProp():
 			heldProp = null
 			updateHotbar()
 		
-		if Input.is_action_pressed("left"):
-			heldProp.apply_torque_impulse(-250.0)
-			#targetRotation -= 2*(PI/180)
-			#if targetRotation <= -PI:
-				#targetRotation = PI - 0.1
-			
-		elif Input.is_action_pressed("right"):
-			heldProp.apply_torque_impulse(250.0)
-			#targetRotation += 2*(PI/180)
-			#if targetRotation >= PI:
-				#targetRotation = -PI + 0.1
 
 func bufferPlacement():
 	placeBuffer = true
