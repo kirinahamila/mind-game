@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cqr0lqt7flljr" path="res://assets/textures/effects/flame.png" id="4_wc1ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oorc0"]
+size = Vector2(18, 29.333336)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc1ib"]
+size = Vector2(26.830172, 10.678507)
 
 [sub_resource type="Animation" id="Animation_7sh6p"]
 length = 0.001
@@ -85,10 +87,10 @@ propDesc = "The Flamethrower shoots a pillair of fire into the sky.
 Great for taking out flying enemies!"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472275326]
-scale = Vector2(0.7, 1)
 texture = ExtResource("2_72abo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1067793831]
+position = Vector2(-0.9999998, 1.5)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_oorc0")
@@ -103,96 +105,83 @@ knockback = 10
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1522132552]
-position = Vector2(125, -125)
-rotation = 0.7853982
-scale = Vector2(1, 15.5)
+position = Vector2(79.9527, -70.045166)
+rotation = 0.7622756
+scale = Vector2(0.9999999, 15.499999)
 shape = SubResource("RectangleShape2D_wc1ib")
 disabled = true
 
 [node name="flames" type="Node2D" parent="Attack" unique_id=1381909015]
+position = Vector2(0, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Attack/flames" unique_id=750702525]
-position = Vector2(25, -25)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(25.838835, -19)
+rotation = 0.7062953
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Attack/flames" unique_id=1147024071]
-position = Vector2(40, -40)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(33.677673, -27)
+rotation = 0.64187884
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Attack/flames" unique_id=1305822680]
-position = Vector2(55, -55)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(41.51651, -35)
+rotation = 0.6874121
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Attack/flames" unique_id=84202722]
-position = Vector2(70, -70)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(49.355347, -43)
+rotation = 0.56728774
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Attack/flames" unique_id=315431654]
-position = Vector2(85, -85)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(57.194183, -51)
+rotation = 0.71636575
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Attack/flames" unique_id=1146932567]
-position = Vector2(100, -100)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(65.03302, -59)
+rotation = 0.6491348
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Attack/flames" unique_id=1163303349]
-position = Vector2(115, -115)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(72.87186, -67)
+rotation = 0.70288783
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Attack/flames" unique_id=1119371583]
-position = Vector2(130, -130)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(80.71069, -75)
+rotation = 0.7450524
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Attack/flames" unique_id=525797762]
-position = Vector2(145, -145)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(88.54953, -83)
+rotation = 0.7330498
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Attack/flames" unique_id=1868551447]
-position = Vector2(160, -160)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(96.38837, -91)
+rotation = 0.70965415
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Attack/flames" unique_id=503434580]
-position = Vector2(175, -175)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(104.2272, -99)
+rotation = 0.78495806
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Attack/flames" unique_id=1598626680]
-position = Vector2(190, -190)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(112.06604, -107)
+rotation = 0.61865956
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D13" type="Sprite2D" parent="Attack/flames" unique_id=186482384]
-position = Vector2(205, -205)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(119.90488, -115.16115)
+rotation = 0.9057701
 texture = ExtResource("4_wc1ib")
 
 [node name="Sprite2D14" type="Sprite2D" parent="Attack/flames" unique_id=1637239759]
-position = Vector2(220, -220)
-rotation = -0.7853982
-scale = Vector2(1.9999999, 1.9999999)
+position = Vector2(127.90489, -123.16116)
+rotation = 0.80721873
 texture = ExtResource("4_wc1ib")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=270505067]
