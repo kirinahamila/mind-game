@@ -9,6 +9,11 @@ extends Node2D
 @onready var propPlacementMenu = $propPlacementMenu
 @onready var gameOverScreen = $gameOverScreen
 
+var gameplay_zoom = 1.25
+var gameplay_posy = 374
+var placement_zoom = 0.75
+var placement_posy = 374
+
 var gameplayElements
 var startupElements
 var propSelectionElements
@@ -101,8 +106,8 @@ func _on_prop_placement_menu_props_placed() -> void:
 	changeGameState("gameplay")
 	gameWorld.levelWaves.Wave(gameWorld.enemyPool, 100)
 	gameWorld.activeWave = true
-	camera.zoom = Vector2(0.75, 0.75)
-	camera.position.y = 124
+	camera.position.y = gameplay_posy
+	camera.zoom = Vector2(gameplay_zoom, gameplay_zoom)
 
 func _on_character_body_2d_dead() -> void:
 	changeGameState("gameOver")
@@ -110,5 +115,5 @@ func _on_character_body_2d_dead() -> void:
 func _on_game_world_wave_progress() -> void:
 	changeGameState("propSelection")
 	propSelectionMenu.midWaveSetup()
-	camera.position.y = 324
-	camera.zoom = Vector2(1,1)
+	camera.position.y = placement_posy
+	camera.zoom = Vector2(placement_zoom,placement_zoom)
