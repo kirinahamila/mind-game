@@ -10,6 +10,9 @@ collision_layer = 833
 collision_mask = 257
 script = ExtResource("1_drjl2")
 propSprite = ExtResource("2_1c7k5")
+propName = "Crossbow"
+propDesc = "The Crossbow will shoot arrows in front of it that will large amounts of damage and knockback to enemies!
+However, these arrows might topple your other defenses if they make contact so watch out!"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2093703662]
 scale = Vector2(1.8, 1.5)

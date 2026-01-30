@@ -4,10 +4,6 @@ extends Prop
 
 @onready var launchZone = $launchZone
 
-var propName = "Spring"
-@export var propSprite: Texture2D
-
-var propDesc = "The Spring will launch objects that stand on top of it upwards. \nIt is useful for getting over your tall defenses"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

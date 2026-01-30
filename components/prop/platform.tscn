@@ -10,6 +10,8 @@ collision_layer = 833
 collision_mask = 257
 script = ExtResource("1_bif05")
 propSprite = ExtResource("2_bif05")
+propName = "Platform"
+propDesc = "The Platform is a large and heavy strip of terrain you can stand upon. \\nUse it alongside Rocks to build a fortress!"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304310895]
 scale = Vector2(6, 3)
