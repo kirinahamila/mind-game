@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d2g4eihw6i2ld"]
+
+[ext_resource type="Script" uid="uid://dhgo1yius76t8" path="res://components/prop/prop.gd" id="1_k48bp"]
+[ext_resource type="Texture2D" uid="uid://tmfi1g7at7tn" path="res://assets/textures/props/large/sack.png" id="2_k48bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrp18"]
+size = Vector2(26.0089, 25.013306)
+
+[node name="Node2D" type="RigidBody2D" unique_id=1149848671]
+collision_layer = 833
+collision_mask = 263
+script = ExtResource("1_k48bp")
+propSprite = ExtResource("2_k48bp")
+propName = "Sack"
+metadata/_custom_type_script = "uid://dhgo1yius76t8"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=122494894]
+position = Vector2(0, -3)
+texture = ExtResource("2_k48bp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=984052640]
+position = Vector2(-0.50727487, -3.0047503)
+rotation = 1.5611554
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_wrp18")
