@@ -15,10 +15,10 @@ script = ExtResource("1_aiig8")
 
 [node name="hitBox" type="Area2D" parent="." unique_id=340748630]
 collision_layer = 32
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("2_x1kgr")
 damage = 50
-knockback = 500
+knockback = 250
 
 [node name="Sprite2D" type="Sprite2D" parent="hitBox" unique_id=1694175615]
 scale = Vector2(1.2, 0.6)

@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if hitBox.has_overlapping_areas():
+	if hitBox.has_overlapping_areas()||hitBox.has_overlapping_bodies():
 		queue_free()
 	
 	if !timerStart:
