@@ -60,7 +60,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	hpBar.rotation = -rotation
 
 func damageScan():
 	if hurtBox.has_overlapping_areas():
@@ -123,7 +123,7 @@ func flyBehavior(targetHeight):
 	
 	if abs(targetLocation.x-global_position.x) > 75:
 		var impulse = targetLocation-global_position
-		impulse = impulse.normalized()*250
+		impulse = impulse.normalized()*100
 		apply_central_force(Vector2(impulse.x, 0))
 	else:
 		attackState = true
