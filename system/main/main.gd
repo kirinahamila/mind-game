@@ -117,3 +117,11 @@ func _on_game_world_wave_progress() -> void:
 	propSelectionMenu.midWaveSetup()
 	camera.position.y = placement_posy
 	camera.zoom = Vector2(placement_zoom,placement_zoom)
+
+
+func _on_game_over_screen_restart() -> void:
+	gameWorld.restart()
+	playerCharacter.restart()
+	propSelectionMenu.restart()
+	propPlacementMenu.restart()
+	changeGameState("startup")

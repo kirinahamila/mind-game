@@ -28,6 +28,11 @@ func _ready() -> void:
 	midGameOptions.append_array(defensesOptions)
 	makeCards(defensesOptions)
 
+func restart():
+	defenseNum = 5
+	totalDefenses = 5
+	midGameOptions.append_array(defensesOptions)
+	makeCards(defensesOptions)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

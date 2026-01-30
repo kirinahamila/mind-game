@@ -1,9 +1,12 @@
-[gd_scene load_steps=0 format=3 uid="uid://bc2326i03te6u"]
+[gd_scene format=3 uid="uid://bc2326i03te6u"]
+
+[ext_resource type="Script" uid="uid://ddksrpvkkoag8" path="res://components/screens/game_over_screen.gd" id="1_yq2s3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1glp"]
 font_size = 55
 
 [node name="gameOverScreen" type="Node2D" unique_id=796126566]
+script = ExtResource("1_yq2s3")
 
 [node name="Label" type="Label" parent="." unique_id=544365062]
 offset_left = 375.0
@@ -13,3 +16,12 @@ offset_bottom = 400.0
 text = "GAME OVER !"
 label_settings = SubResource("LabelSettings_p1glp")
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1210176982]
+offset_left = 528.0
+offset_top = 403.0
+offset_right = 600.0
+offset_bottom = 434.0
+text = "Restart?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

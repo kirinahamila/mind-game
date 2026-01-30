@@ -137,3 +137,9 @@ func checkDeath():
 func _ready() -> void:
 	$weapons/baseballBat/Sprite2D.hide()
 	$weapons/baseballBat/CollisionShape2D.disabled = true
+
+func restart():
+	$weapons/baseballBat/Sprite2D.hide()
+	$weapons/baseballBat/CollisionShape2D.disabled = true
+	maxHealth = 100.0
+	health = 100.0

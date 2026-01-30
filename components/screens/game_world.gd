@@ -27,6 +27,13 @@ var curWaveDifficulty = 100
 func _ready() -> void:
 	enemyPool = [kickBall, seagull, redKickball]
 
+func restart():
+	currentWave = 0
+	curWaveDifficulty = 100
+	spawning = false
+	activeWave = false
+	waveChanging = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	spawnCycle()

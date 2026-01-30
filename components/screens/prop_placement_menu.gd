@@ -8,6 +8,8 @@ signal propsPlaced
 
 @onready var propCard = preload("res://system/ui/prop_card/prop_card.tscn")
 
+var placedPropsSave: Array
+
 var curProps: Array
 
 var heldProp: RigidBody2D
@@ -23,6 +25,10 @@ func setCurProps(props):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+
+func restart():
+	placeBuffer = false
+	clearProps()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -72,6 +78,7 @@ func placeProp(prop, isFromHotbar):
 	
 	if isFromHotbar:
 		get_parent().add_child(prop)
+		placedPropsSave.append(prop)
 		curProps.erase(prop)
 	heldProp = prop
 
@@ -117,3 +124,9 @@ func bufferPlacement():
 	placeBuffer = true
 	await get_tree().create_timer(0.25).timeout
 	placeBuffer = false
+
+func clearProps():
+	var f = placedPropsSave.size()
+	for i in f:
+		placedPropsSave[i].queue_free()
+	placedPropsSave.clear()
