@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cm45ttyql1yvc"]
+
+[ext_resource type="Script" uid="uid://dhgo1yius76t8" path="res://components/prop/prop.gd" id="1_ucprx"]
+[ext_resource type="Texture2D" uid="uid://b83sgs4v86jti" path="res://assets/textures/props/small/plank.png" id="2_ucprx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8gqh"]
+size = Vector2(28, 6)
+
+[node name="Node2D" type="RigidBody2D" unique_id=1149848671]
+collision_layer = 833
+collision_mask = 263
+script = ExtResource("1_ucprx")
+propSprite = ExtResource("2_ucprx")
+propName = "Slab"
+metadata/_custom_type_script = "uid://dhgo1yius76t8"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=122494894]
+position = Vector2(0, -3)
+texture = ExtResource("2_ucprx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=984052640]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_o8gqh")
