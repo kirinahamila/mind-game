@@ -17,7 +17,9 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xc0r5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w37qy"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x27oe"]
+radius = 2.3333335
+height = 40.0
 
 [sub_resource type="Animation" id="Animation_w37qy"]
 length = 0.001
@@ -142,13 +144,14 @@ shovePower = 250
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="weapons/baseballBat" unique_id=1559155583]
-position = Vector2(45, 0)
+position = Vector2(30, 0)
+rotation = 1.5707964
 scale = Vector2(3, 1)
-shape = SubResource("RectangleShape2D_w37qy")
+shape = SubResource("CapsuleShape2D_x27oe")
 
 [node name="Sprite2D" type="Sprite2D" parent="weapons/baseballBat" unique_id=517906080]
-position = Vector2(45, 0)
-scale = Vector2(2.5, 2.5)
+position = Vector2(26.999996, 0)
+scale = Vector2(1.275, 1.275)
 texture = ExtResource("4_xc0r5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474630574]
