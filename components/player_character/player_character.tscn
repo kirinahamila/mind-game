@@ -315,6 +315,7 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_mbup7")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Torso" unique_id=1984899161]
-visible = false
+position = Vector2(0, 10)
 node_a = NodePath("..")
 node_b = NodePath("../..")
+softness = 1.0
