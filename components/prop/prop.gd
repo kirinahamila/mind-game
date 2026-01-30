@@ -1,4 +1,4 @@
-class_name Prop
+@abstract class_name Prop
 extends RigidBody2D
 
 
