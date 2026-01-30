@@ -104,6 +104,10 @@ func createTag(text, type):
 	
 	damageTag.global_position = global_position
 
+func takeDamage(damageTaken):
+	health -= damageTaken
+	createTag(damageTaken, "damage")
+
 #Below this point are different universal behaviors. Enemies may have their own unique behaviors
 
 func hopBehavior(power):

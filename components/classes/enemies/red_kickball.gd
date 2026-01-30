@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if health <= 0:
 		queue_free()
 
+
 func attackBehavior():
 	if !launched:
 		launched = true
