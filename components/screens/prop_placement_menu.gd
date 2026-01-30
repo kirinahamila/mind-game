@@ -95,7 +95,7 @@ func holdProp():
 			#print(targetRotation)
 		
 		var impulse = get_global_mouse_position() - heldProp.global_position
-		impulse = impulse*100
+		impulse = impulse*100*heldProp.mass
 		heldProp.apply_central_force(impulse)
 		if Input.is_action_just_pressed("place"):
 			bufferPlacement()
