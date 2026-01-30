@@ -137,6 +137,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_gm26f"]
 
 [node name="seagull" type="RigidBody2D" unique_id=1162075046]
+mass = 0.25
 script = ExtResource("1_fm0rf")
 metadata/_custom_type_script = "uid://bwquq7v7jk7hy"
 

@@ -26,6 +26,10 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_v4opm")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6lu68"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sisko"]
+
 [node name="GameWorld" type="Node2D" unique_id=337179226]
 script = ExtResource("1_6p460")
 
@@ -87,3 +91,17 @@ offset_top = 512.0
 offset_right = 1765.0
 offset_bottom = 1738.0
 color = Color(0.2784314, 0.1764706, 0.23529412, 1)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=673524424]
+position = Vector2(-550, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=56850828]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_6lu68")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=382245763]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=90667992]
+position = Vector2(1700, 0)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_sisko")

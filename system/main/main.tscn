@@ -25,8 +25,10 @@ script = ExtResource("1_qjbxo")
 position = Vector2(576, 324)
 
 [node name="CharacterBody2D" parent="." unique_id=2045797745 instance=ExtResource("4_frqux")]
+position = Vector2(625, -28)
 
 [connection signal="startGame" from="startScreen" to="." method="_on_start_screen_start_game"]
 [connection signal="waveProgress" from="GameWorld" to="." method="_on_game_world_wave_progress"]
 [connection signal="propPlacementTime" from="propSelectionMenu" to="." method="_on_prop_selection_menu_prop_placement_time"]
 [connection signal="propsPlaced" from="propPlacementMenu" to="." method="_on_prop_placement_menu_props_placed"]
+[connection signal="dead" from="CharacterBody2D" to="." method="_on_character_body_2d_dead"]

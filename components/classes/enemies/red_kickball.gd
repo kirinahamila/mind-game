@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	findPlayer()
 	
 	if abs(targetLocation.x-global_position.x) > 250 && !waitingForExplode:
-		hopBehavior(80)
+		hopBehavior(100)
 	else:
 		attackBehavior()
 	
