@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://be2mnwsexh775" path="res://system/ui/prop_card/prop_card.gd" id="1_41buy"]
 
+[sub_resource type="Theme" id="Theme_c2ibu"]
+
 [node name="propCard" type="Button" unique_id=1015975828]
 custom_minimum_size = Vector2(125, 150)
 anchors_preset = 15
@@ -11,6 +13,7 @@ offset_right = -1027.0
 offset_bottom = -498.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_c2ibu")
 script = ExtResource("1_41buy")
 
 [node name="Panel" type="Panel" parent="." unique_id=113738938]

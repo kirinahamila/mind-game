@@ -108,6 +108,7 @@ size = Vector2(8, 13)
 collision_layer = 266
 collision_mask = 271
 script = ExtResource("1_m6yna")
+pushForce = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977719940]
 visible = false

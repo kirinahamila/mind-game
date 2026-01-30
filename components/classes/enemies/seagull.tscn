@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dhofdqmt3ailo" path="res://assets/textures/enemies/seagluah.png" id="2_0dhld"]
 [ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_gm26f"]
 [ext_resource type="Texture2D" uid="uid://kc33wxb4c156" path="res://assets/textures/effects/Explosion_Spritesheet1.png" id="4_0dhld"]
-[ext_resource type="Texture2D" uid="uid://c0org6lvjpf2e" path="res://assets/textures/effects/Explosion_Spritesheet2.png" id="5_qltf6"]
-[ext_resource type="Texture2D" uid="uid://7jowgbn055of" path="res://assets/textures/effects/Explosion_Spritesheet3.png" id="6_m0jlj"]
-[ext_resource type="Texture2D" uid="uid://b6rmswef1noqb" path="res://assets/textures/effects/Explosion_Spritesheet4.png" id="7_4iiyh"]
-[ext_resource type="Texture2D" uid="uid://bm6sqdvn4onav" path="res://assets/textures/effects/Explosion_Spritesheet5.png" id="8_jg8n8"]
-[ext_resource type="Texture2D" uid="uid://dr5yxhft1a0dx" path="res://assets/textures/effects/Explosion_Spritesheet6.png" id="9_lrgpo"]
+[ext_resource type="Texture2D" uid="uid://d02hw1ceajyiq" path="res://assets/textures/effects/explo/kaboom1.png" id="5_qltf6"]
+[ext_resource type="Texture2D" uid="uid://4pubbnrr8a4m" path="res://assets/textures/effects/explo/kaboom2.png" id="6_m0jlj"]
+[ext_resource type="Texture2D" uid="uid://eysrvrrqlrh1" path="res://assets/textures/effects/explo/kaboom3.png" id="7_4iiyh"]
+[ext_resource type="Texture2D" uid="uid://cqqogwjoilm15" path="res://assets/textures/effects/explo/kaboom4.png" id="8_jg8n8"]
+[ext_resource type="Texture2D" uid="uid://kij3ng06q2bq" path="res://assets/textures/effects/explo/kaboom5.png" id="9_u6uby"]
+[ext_resource type="Texture2D" uid="uid://7gps3rwbtl0i" path="res://assets/textures/effects/explo/kaboom6.png" id="10_qltf6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fm0rf"]
 
@@ -36,7 +37,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -60,7 +61,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -100,7 +101,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(4.5, 4.5), Vector2(3, 3), Vector2(7, 7), Vector2(10, 10), Vector2(14, 14), Vector2(5, 5)]
+"values": [Vector2(5, 5), Vector2(6, 6), Vector2(8, 8), Vector2(9, 9), Vector2(10, 10), Vector2(5, 5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -109,10 +110,10 @@ tracks/2/path = NodePath("explosion:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -124,7 +125,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_0dhld"), ExtResource("5_qltf6"), ExtResource("6_m0jlj"), ExtResource("7_4iiyh"), ExtResource("8_jg8n8"), ExtResource("9_lrgpo")]
+"values": [ExtResource("5_qltf6"), ExtResource("6_m0jlj"), ExtResource("7_4iiyh"), ExtResource("8_jg8n8"), ExtResource("9_u6uby"), ExtResource("10_qltf6")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e8e1x"]
@@ -191,6 +192,7 @@ show_percentage = false
 libraries/ = SubResource("AnimationLibrary_e8e1x")
 
 [node name="explosion" type="Area2D" parent="." unique_id=1837659058]
+visible = false
 collision_layer = 16
 collision_mask = 64
 script = ExtResource("3_gm26f")
@@ -202,6 +204,8 @@ metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explosion" unique_id=1651270823]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_gm26f")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="explosion" unique_id=1451850779]
+scale = Vector2(2, 2)
 texture = ExtResource("4_0dhld")
