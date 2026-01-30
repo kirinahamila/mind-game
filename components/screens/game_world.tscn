@@ -1,28 +1,35 @@
-[gd_scene format=3 uid="uid://gkg6swxubgc4"]
+[gd_scene format=4 uid="uid://gkg6swxubgc4"]
 
 [ext_resource type="Script" uid="uid://tv6nvr8mafqt" path="res://components/screens/game_world.gd" id="1_6p460"]
-[ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_hly68"]
-[ext_resource type="Script" uid="uid://dnkyc28pyf6aq" path="res://components/classes/wave.gd" id="3_v4opm"]
+[ext_resource type="Texture2D" uid="uid://bbewan8agprs" path="res://assets/textures/map/grass.png" id="3_f3sl2"]
+[ext_resource type="Script" path="res://components/classes/wave.gd" id="3_v4opm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bvgre"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v4opm"]
 font_size = 40
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lu68"]
+texture = ExtResource("3_f3sl2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sisko"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_6lu68")
+
 [node name="GameWorld" type="Node2D" unique_id=337179226]
 script = ExtResource("1_6p460")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=911146479]
-position = Vector2(0, 500)
+position = Vector2(0, 492)
 scale = Vector2(2, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=42043101]
 shape = SubResource("WorldBoundaryShape2D_bvgre")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=516791812]
-position = Vector2(316.49997, 77.49997)
-scale = Vector2(36.75, 4.84375)
-texture = ExtResource("1_hly68")
 
 [node name="enemySpawner1" type="Node2D" parent="." unique_id=497858278]
 position = Vector2(-500, 400)
@@ -32,7 +39,6 @@ position = Vector2(1650, 400)
 
 [node name="waveHandler" type="Node2D" parent="." unique_id=1137909681]
 script = ExtResource("3_v4opm")
-metadata/_custom_type_script = "uid://dnkyc28pyf6aq"
 
 [node name="Label" type="Label" parent="." unique_id=204769567]
 offset_left = -150.0
@@ -40,3 +46,15 @@ offset_top = -300.0
 offset_right = -110.0
 offset_bottom = -245.0
 label_settings = SubResource("LabelSettings_v4opm")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1594809482]
+tile_map_data = PackedByteArray("AAAAAA8AAAAAAAAAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAAZAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAcAA8AAAAAAAAAAAAdAA8AAAAAAAAAAAAeAA8AAAAAAAAAAAAfAA8AAAAAAAAAAAAgAA8AAAAAAAAAAAAhAA8AAAAAAAAAAAAiAA8AAAAAAAAAAAAjAA8AAAAAAAAAAAAkAA8AAAAAAAAAAAAlAA8AAAAAAAAAAAAmAA8AAAAAAAAAAAAnAA8AAAAAAAAAAAAoAA8AAAAAAAAAAAApAA8AAAAAAAAAAAD//w8AAAAAAAAAAAD+/w8AAAAAAAAAAAD9/w8AAAAAAAAAAAD8/w8AAAAAAAAAAAD7/w8AAAAAAAAAAAD6/w8AAAAAAAAAAAD5/w8AAAAAAAAAAAD4/w8AAAAAAAAAAAD3/w8AAAAAAAAAAAD2/w8AAAAAAAAAAAD1/w8AAAAAAAAAAAD0/w8AAAAAAAAAAADz/w8AAAAAAAAAAADy/w8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_sisko")
+y_sort_origin = -3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=266864441]
+offset_left = -441.0
+offset_top = 508.0
+offset_right = 1326.0
+offset_bottom = 956.0
+color = Color(0.2784314, 0.1764706, 0.23529412, 1)
