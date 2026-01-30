@@ -102,7 +102,13 @@ func _on_prop_placement_menu_props_placed() -> void:
 	gameWorld.levelWaves.Wave(gameWorld.enemyPool, 100)
 	gameWorld.activeWave = true
 	camera.zoom = Vector2(0.75, 0.75)
-	camera.position.y -= 200
+	camera.position.y = 124
 
 func _on_character_body_2d_dead() -> void:
 	changeGameState("gameOver")
+
+func _on_game_world_wave_progress() -> void:
+	changeGameState("propSelection")
+	propSelectionMenu.midWaveSetup()
+	camera.position.y = 324
+	camera.zoom = Vector2(1,1)

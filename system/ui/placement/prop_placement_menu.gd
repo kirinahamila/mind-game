@@ -66,9 +66,9 @@ func holdProp():
 		heldProp.linear_damp = 10
 		heldProp.angular_damp = 10
 		
-		if heldProp.rotation_degrees != targetRotation:
-			heldProp.constant_torque = (targetRotation - heldProp.rotation) * 10000
-			print(targetRotation)
+		#if heldProp.rotation_degrees != targetRotation:
+			#heldProp.constant_torque = (targetRotation - heldProp.rotation) * 10000
+			#print(targetRotation)
 		
 		var impulse = get_global_mouse_position() - heldProp.global_position
 		impulse = impulse*100
@@ -85,11 +85,13 @@ func holdProp():
 			updateHotbar()
 		
 		if Input.is_action_pressed("left"):
-			targetRotation -= 2*(PI/180)
-			if targetRotation <= -PI:
-				targetRotation = PI - 0.1
+			heldProp.apply_torque_impulse(-250.0)
+			#targetRotation -= 2*(PI/180)
+			#if targetRotation <= -PI:
+				#targetRotation = PI - 0.1
 			
 		elif Input.is_action_pressed("right"):
-			targetRotation += 2*(PI/180)
-			if targetRotation >= PI:
-				targetRotation = -PI + 0.1
+			heldProp.apply_torque_impulse(250.0)
+			#targetRotation += 2*(PI/180)
+			#if targetRotation >= PI:
+				#targetRotation = -PI + 0.1
