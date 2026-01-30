@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Prop
 
 @onready var hitBox = $hitBox
 
