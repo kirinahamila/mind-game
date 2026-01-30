@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	setupHealthBar()
 	
 	findPlayer()
-	flyBehavior(250)
+	flyBehavior(325)
 	
 	if health <= 0:
 		queue_free()

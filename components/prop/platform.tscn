@@ -16,9 +16,9 @@ propName = "Platform"
 metadata/_custom_type_script = "uid://dhgo1yius76t8"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304310895]
-scale = Vector2(5, 5)
+scale = Vector2(5, 2)
 texture = ExtResource("2_bif05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552103791]
-scale = Vector2(5, 5)
+scale = Vector2(5.3, 3.5)
 shape = SubResource("RectangleShape2D_s8bxr")

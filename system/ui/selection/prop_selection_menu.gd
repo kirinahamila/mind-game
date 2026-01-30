@@ -10,9 +10,9 @@ signal propPlacementTime
 @onready var platForm = preload("res://components/prop/platform.tscn")
 @onready var fan = preload("res://components/prop/fan.tscn")
 @onready var flameThrower = preload("res://components/prop/flame_thrower.tscn")
-@onready var plank = preload("uid://cm45ttyql1yvc")
-@onready var sack = preload("uid://d2g4eihw6i2ld")
-@onready var slab = preload("uid://b1lyoa25pp8nc")
+@onready var plank = preload("res://components/prop/plank.tscn")
+@onready var sack = preload("res://assets/textures/props/large/sack.png")
+@onready var slab = preload("res://components/prop/slab.tscn")
 
 
 @onready var descBox = $descBox
