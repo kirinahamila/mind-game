@@ -140,6 +140,7 @@ collision_mask = 64
 script = ExtResource("3_q1otq")
 damage = 25
 knockback = 400
+effect = "xfj8\\"
 shovePower = 4000
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
