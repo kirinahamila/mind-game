@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cph5af4xpbv34"]
 
 [ext_resource type="Script" uid="uid://bn8k3rrtqbm7l" path="res://components/prop/flame_thrower.gd" id="1_7sh6p"]
-[ext_resource type="Texture2D" uid="uid://cgwubdufs4p2u" path="res://icon.svg" id="1_oorc0"]
+[ext_resource type="Texture2D" uid="uid://cj1wxrd86oy3n" path="res://assets/textures/props/trap/flamethrower.png" id="2_72abo"]
 [ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_72abo"]
+[ext_resource type="Texture2D" uid="uid://cqr0lqt7flljr" path="res://assets/textures/effects/flame.png" id="4_wc1ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oorc0"]
 
@@ -78,11 +79,11 @@ _data = {
 collision_layer = 257
 collision_mask = 257
 script = ExtResource("1_7sh6p")
-propSprite = ExtResource("1_oorc0")
+propSprite = ExtResource("2_72abo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472275326]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_oorc0")
+scale = Vector2(0.7, 1)
+texture = ExtResource("2_72abo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1067793831]
 rotation = 1.5707964
@@ -98,18 +99,98 @@ damage = 10
 knockback = 10
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
-[node name="Sprite2D" type="Sprite2D" parent="Attack" unique_id=1661935214]
-position = Vector2(125, -125)
-rotation = -0.7853982
-scale = Vector2(2.5, 0.15)
-texture = ExtResource("1_oorc0")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1522132552]
 position = Vector2(125, -125)
 rotation = 0.7853982
 scale = Vector2(1, 15.5)
 shape = SubResource("RectangleShape2D_wc1ib")
 disabled = true
+
+[node name="flames" type="Node2D" parent="Attack" unique_id=1381909015]
+
+[node name="Sprite2D" type="Sprite2D" parent="Attack/flames" unique_id=750702525]
+position = Vector2(25, -25)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Attack/flames" unique_id=1147024071]
+position = Vector2(40, -40)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Attack/flames" unique_id=1305822680]
+position = Vector2(55, -55)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Attack/flames" unique_id=84202722]
+position = Vector2(70, -70)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Attack/flames" unique_id=315431654]
+position = Vector2(85, -85)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Attack/flames" unique_id=1146932567]
+position = Vector2(100, -100)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Attack/flames" unique_id=1163303349]
+position = Vector2(115, -115)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Attack/flames" unique_id=1119371583]
+position = Vector2(130, -130)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Attack/flames" unique_id=525797762]
+position = Vector2(145, -145)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Attack/flames" unique_id=1868551447]
+position = Vector2(160, -160)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Attack/flames" unique_id=503434580]
+position = Vector2(175, -175)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Attack/flames" unique_id=1598626680]
+position = Vector2(190, -190)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Attack/flames" unique_id=186482384]
+position = Vector2(205, -205)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Attack/flames" unique_id=1637239759]
+position = Vector2(220, -220)
+rotation = -0.7853982
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_wc1ib")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=270505067]
 libraries/ = SubResource("AnimationLibrary_kwglf")
