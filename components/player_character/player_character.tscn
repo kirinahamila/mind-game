@@ -80,8 +80,8 @@ bg_color = Color(1, 0, 0, 1)
 bg_color = Color(0.33333325, 1, 0, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2045797745]
-collision_layer = 10
-collision_mask = 15
+collision_layer = 266
+collision_mask = 271
 script = ExtResource("1_m6yna")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977719940]
