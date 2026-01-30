@@ -7,6 +7,8 @@ extends RigidBody2D
 var propName = "Fan"
 @export var propSprite: Texture2D
 
+var propDesc = "The Fan will push away all objects in front of it! \nWatch out though because the fan can topple your own defenses!"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim.play("fanSpin")

@@ -29,6 +29,11 @@ func _process(delta: float) -> void:
 	
 	if health <= 0:
 		queue_free()
+	
+	if targetLocation.x - global_position.x > 0:
+		$Sprite2D.scale = Vector2(-1,1)
+	else:
+		$Sprite2D.scale = Vector2(1,1)
 
 func dropAttack():
 	if attackState:

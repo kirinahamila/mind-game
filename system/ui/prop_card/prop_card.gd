@@ -5,18 +5,22 @@ class_name PropCard extends Button
 
 var propCardName
 var propCardSprite
+var propCardDesc
 
 var selected = false
 
-func PropCard(propCardNamep, propCardSpritep):
+func PropCard(propCardNamep, propCardSpritep, propCardDescp):
 	propCardName = propCardNamep
 	propCardSprite = propCardSpritep
+	propCardDesc = propCardDescp
 	
 	label = $Label
 	label.set_text(propCardName)
 	
 	texture = $TextureRect
 	texture.texture = propCardSprite
+	
+	tooltip_text = propCardDesc
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
