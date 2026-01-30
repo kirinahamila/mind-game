@@ -96,11 +96,13 @@ func changeGameState(newState):
 
 func _on_start_screen_start_game() -> void:
 		changeGameState("propSelection")
+		camera.zoom = Vector2(placement_zoom, placement_zoom)
 
 func _on_prop_selection_menu_prop_placement_time() -> void:
 	inventory = propSelectionMenu.curDefenses
 	changeGameState("propPlacement")
 	propPlacementMenu.setCurProps(inventory)
+	camera.zoom = Vector2(placement_zoom, placement_zoom)
 
 func _on_prop_placement_menu_props_placed() -> void:
 	changeGameState("gameplay")
