@@ -95,6 +95,10 @@ func setupHealthBar():
 		hpBar.show()
 		hpBar.max_value = maxHealth
 		hpBar.value = health
+	
+	hpBar.rotation = -rotation
+	hpBar.global_position = global_position
+	hpBar.global_position.y = global_position.y -25
 
 func createTag(text, type):
 	var damageTag = tag.instantiate()
@@ -123,7 +127,7 @@ func flyBehavior(targetHeight):
 	
 	if abs(targetLocation.x-global_position.x) > 75:
 		var impulse = targetLocation-global_position
-		impulse = impulse.normalized()*250
+		impulse = impulse.normalized()*100
 		apply_central_force(Vector2(impulse.x, 0))
 	else:
 		attackState = true
