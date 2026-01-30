@@ -214,7 +214,7 @@ collision_mask = 64
 script = ExtResource("2_87j5q")
 damage = 60
 knockback = 2000
-shovePower = 750
+shovePower = 20000
 metadata/_custom_type_script = "uid://bvwm4ltpenltr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explosion" unique_id=1221704398]

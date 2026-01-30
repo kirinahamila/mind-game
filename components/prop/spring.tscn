@@ -51,6 +51,7 @@ _data = {
 [node name="spring" type="RigidBody2D" unique_id=599040440]
 collision_layer = 833
 collision_mask = 263
+mass = 10.0
 script = ExtResource("1_boyml")
 propSprite = ExtResource("2_wuiyn")
 propName = "Spring"

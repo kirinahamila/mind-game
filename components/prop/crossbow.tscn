@@ -10,7 +10,7 @@ height = 16.0
 [node name="crossbow" type="RigidBody2D" unique_id=1416310162]
 collision_layer = 833
 collision_mask = 257
-mass = 20.0
+mass = 10.0
 script = ExtResource("1_drjl2")
 propSprite = ExtResource("2_1c7k5")
 propName = "Crossbow"
