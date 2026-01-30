@@ -11,8 +11,8 @@ signal dead
 @onready var baseballBat = $weapons/baseballBat
 @onready var hpBar = $ProgressBar
 
-var maxHealth = 200.0
-var health = 200.0
+var maxHealth = 100.0
+var health = 100.0
 
 #Base Stats
 var maxSpeed = 200

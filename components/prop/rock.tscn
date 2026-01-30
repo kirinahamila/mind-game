@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://7hua065o2arm"]
 
-[ext_resource type="Script" uid="uid://h5losg7fqf1a" path="res://components/prop/rock_prop.gd" id="1_o8gqh"]
-[ext_resource type="Texture2D" uid="uid://6eltonyldrfs" path="res://assets/textures/props/large/rock.png" id="2_3okdn"]
+[ext_resource type="Texture2D" uid="uid://6eltonyldrfs" path="res://assets/textures/props/large/rock.png" id="1_r3b11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8gqh"]
 
@@ -16,7 +15,7 @@ propDesc = "The Rock is a sturdy and large block you can place to do anything. \
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=122494894]
 position = Vector2(0, -3)
 scale = Vector2(2.25, 2.25)
-texture = ExtResource("2_3okdn")
+texture = ExtResource("1_r3b11")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=984052640]
 scale = Vector2(3, 3)

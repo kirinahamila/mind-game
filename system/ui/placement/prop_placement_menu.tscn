@@ -1,11 +1,9 @@
-[gd_scene format=3 uid="uid://bi2m4kjyf7rcr"]
+[gd_scene load_steps=0 format=3 uid="uid://bi2m4kjyf7rcr"]
 
-[ext_resource type="Script" uid="uid://dw7swlw2tp3eh" path="res://system/ui/placement/prop_placement_menu.gd" id="1_orno3"]
+[ext_resource type="Script" uid="uid://dw7swlw2tp3eh" path="res://components/screens/prop_placement_menu.gd" id="1_orno3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7sabg"]
 font_size = 40
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0rsp4"]
 
 [node name="propPlacementMenu" type="Node2D" unique_id=1310519041]
 script = ExtResource("1_orno3")
@@ -39,10 +37,3 @@ offset_bottom = 280.0
 text = "Place Your Defenses!"
 label_settings = SubResource("LabelSettings_7sabg")
 horizontal_alignment = 1
-
-[node name="mouse" type="Area2D" parent="." unique_id=343360397]
-collision_layer = 512
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse" unique_id=510366838]
-shape = SubResource("CircleShape2D_0rsp4")
