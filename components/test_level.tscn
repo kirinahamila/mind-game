@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dd5scp4huq4fk" path="res://assets/textures/dev/ground_top.png" id="1_r8f0l"]
 [ext_resource type="PackedScene" uid="uid://cnwe58eu7t0on" path="res://components/classes/enemies/kickball.tscn" id="3_1hgfc"]
-[ext_resource type="PackedScene" uid="uid://7hua065o2arm" path="res://components/prop/rockProp.tscn" id="4_r8f0l"]
+[ext_resource type="PackedScene" uid="uid://7hua065o2arm" path="res://components/prop/rock.tscn" id="4_r8f0l"]
 [ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="4_vt0ms"]
 [ext_resource type="PackedScene" uid="uid://c20c5k4mjfgyv" path="res://components/prop/crossbow.tscn" id="5_vi3pk"]
 [ext_resource type="PackedScene" uid="uid://cigmxotit36ik" path="res://components/prop/spring.tscn" id="6_1hgfc"]
