@@ -29,4 +29,5 @@ func _process(delta: float) -> void:
 		## if no bodies have functionality, do not play the animation
 		if unknown_bodies == overlapping_bodies.size():
 			return
+		anim.speed_scale = 2
 		anim.play("springLaunch")
