@@ -50,7 +50,7 @@ _data = {
 }
 
 [node name="fan" type="RigidBody2D" unique_id=920613413]
-collision_layer = 321
+collision_layer = 833
 collision_mask = 257
 script = ExtResource("1_7l2ec")
 propSprite = SubResource("CompressedTexture2D_6js2q")

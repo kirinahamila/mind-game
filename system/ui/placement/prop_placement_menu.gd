@@ -2,6 +2,8 @@ extends Node2D
 
 signal propsPlaced
 
+
+@onready var mouse = $mouse
 @onready var panel = $SelectionPanel
 @onready var grid = $SelectionPanel/grid
 
@@ -12,6 +14,8 @@ var curProps: Array
 var heldProp: RigidBody2D
 
 var targetRotation = 0
+
+var propPickupBuffered = false
 
 func setCurProps(props):
 	curProps = props
@@ -26,7 +30,9 @@ func _physics_process(delta: float) -> void:
 	holdProp()
 	findSelectedProp()
 	
-	if curProps.is_empty():
+	mouse.global_position = get_global_mouse_position()
+	
+	if curProps.is_empty() && heldProp == null:
 		emit_signal("propsPlaced")
 
 
@@ -49,13 +55,22 @@ func findSelectedProp():
 		var f = curProps.size()
 		for i in f:
 			if grid.get_child(i).selected:
-				placeProp(curProps[i])
+				placeProp(curProps[i], true)
+	
+	if Input.is_action_just_pressed("place") && heldProp == null && !propPickupBuffered:
+		if mouse.has_overlapping_areas():
+			print("hello")
+			placeProp(mouse.get_overlapping_areas()[0], false)
+		elif mouse.has_overlapping_bodies():
+			print("hello")
+			placeProp(mouse.get_overlapping_bodies()[0], false)
 
-func placeProp(prop):
+func placeProp(prop, isFromHotbar):
 	panel.hide()
 	panel.process_mode = 4
-	
-	get_parent().add_child(prop)
+	if isFromHotbar:
+		get_parent().add_child(prop)
+		curProps.erase(prop)
 	heldProp = prop
 
 func holdProp():
@@ -80,8 +95,8 @@ func holdProp():
 			heldProp.angular_damp = 0
 			panel.show()
 			panel.process_mode = 0
-			curProps.erase(heldProp)
 			heldProp = null
+			bufferPickup()
 			updateHotbar()
 		
 		if Input.is_action_pressed("left"):
@@ -95,3 +110,8 @@ func holdProp():
 			#targetRotation += 2*(PI/180)
 			#if targetRotation >= PI:
 				#targetRotation = -PI + 0.1
+
+func bufferPickup():
+	propPickupBuffered = true
+	await get_tree().create_timer(0.25).timeout
+	propPickupBuffered = false

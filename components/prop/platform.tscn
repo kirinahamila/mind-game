@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
 
 [node name="platform" type="RigidBody2D" unique_id=1588560374]
-collision_layer = 321
+collision_layer = 833
 collision_mask = 257
 script = ExtResource("1_bif05")
 propSprite = ExtResource("2_bif05")
