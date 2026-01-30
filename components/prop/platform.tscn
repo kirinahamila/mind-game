@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://barb33i6bvcwq"]
 
+[ext_resource type="Script" uid="uid://dhgo1yius76t8" path="res://components/prop/prop.gd" id="1_bif05"]
 [ext_resource type="Texture2D" uid="uid://1oc6hwuabtxi" path="res://assets/textures/props/large/plank.png" id="2_bif05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
 
-[node name="platform" type="RigidBody2D" unique_id=1588560374]
+[node name="Platform" type="RigidBody2D" unique_id=1539619663]
 collision_layer = 321
 collision_mask = 257
+script = ExtResource("1_bif05")
+metadata/_custom_type_script = "uid://dhgo1yius76t8"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304310895]
 scale = Vector2(6, 3)
