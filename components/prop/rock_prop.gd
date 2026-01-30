@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Prop
 
 @export var propName = "Rock"
 @export var propSprite: Texture2D

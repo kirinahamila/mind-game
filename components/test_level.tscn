@@ -33,6 +33,7 @@ position = Vector2(492, 364)
 position = Vector2(168, 292)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=960787182]
+position = Vector2(-1, 0)
 
 [node name="Node2D" parent="." unique_id=1772384942 instance=ExtResource("4_r8f0l")]
 position = Vector2(200, 200)
@@ -42,6 +43,7 @@ position = Vector2(-6, 256)
 
 [node name="spring" parent="." unique_id=599040440 instance=ExtResource("6_1hgfc")]
 position = Vector2(790, 542)
+rotation = -0.055036783
 
 [node name="fan" parent="." unique_id=920613413 instance=ExtResource("7_vt0ms")]
 position = Vector2(76, 93)

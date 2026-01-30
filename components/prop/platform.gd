@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Prop
 
 var propName = "Platform"
 @export var propSprite: Texture2D

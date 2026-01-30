@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Prop
 
 @onready var arrow = preload("res://components/prop/arrow.tscn")
 @onready var arrowSpawn = $arrowSpawn
