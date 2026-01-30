@@ -60,7 +60,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	hpBar.rotation = -rotation
+	pass
 
 func damageScan():
 	if hurtBox.has_overlapping_areas():
@@ -95,6 +95,10 @@ func setupHealthBar():
 		hpBar.show()
 		hpBar.max_value = maxHealth
 		hpBar.value = health
+	
+	hpBar.rotation = -rotation
+	hpBar.global_position = global_position
+	hpBar.global_position.y = global_position.y -25
 
 func createTag(text, type):
 	var damageTag = tag.instantiate()
