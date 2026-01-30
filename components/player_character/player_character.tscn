@@ -166,6 +166,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xc0r5")
 show_percentage = false
 
 [node name="Torso" type="RigidBody2D" parent="." unique_id=1182895348]
+position = Vector2(0, -10)
 can_sleep = false
 
 [node name="Sprite" type="Sprite2D" parent="Torso" unique_id=52227411]
@@ -310,6 +311,7 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_mbup7")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Torso" unique_id=1984899161]
-visible = false
+position = Vector2(0, 10)
 node_a = NodePath("..")
 node_b = NodePath("../..")
+softness = 1.0
