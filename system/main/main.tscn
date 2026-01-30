@@ -15,9 +15,6 @@ script = ExtResource("1_qjbxo")
 
 [node name="GameWorld" parent="." unique_id=353822467 instance=ExtResource("3_o6jpp")]
 
-[node name="CharacterBody2D" parent="." unique_id=1505080417 instance=ExtResource("4_frqux")]
-position = Vector2(569, 0)
-
 [node name="propSelectionMenu" parent="." unique_id=572619620 instance=ExtResource("5_bp6g8")]
 
 [node name="propPlacementMenu" parent="." unique_id=931240621 instance=ExtResource("6_o6jpp")]
@@ -27,8 +24,9 @@ position = Vector2(569, 0)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=551239718]
 position = Vector2(576, 324)
 
+[node name="CharacterBody2D" parent="." unique_id=2045797745 instance=ExtResource("4_frqux")]
+
 [connection signal="startGame" from="startScreen" to="." method="_on_start_screen_start_game"]
 [connection signal="waveProgress" from="GameWorld" to="." method="_on_game_world_wave_progress"]
-[connection signal="dead" from="CharacterBody2D" to="." method="_on_character_body_2d_dead"]
 [connection signal="propPlacementTime" from="propSelectionMenu" to="." method="_on_prop_selection_menu_prop_placement_time"]
 [connection signal="propsPlaced" from="propPlacementMenu" to="." method="_on_prop_placement_menu_props_placed"]
