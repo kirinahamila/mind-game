@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://dssi8t7pjujhh"]
+[gd_scene format=3 uid="uid://dssi8t7pjujhh"]
 
 [ext_resource type="Script" uid="uid://d0lqfftvh02iu" path="res://system/ui/start/start_screen.gd" id="1_t6s6p"]
 
@@ -13,7 +13,7 @@ offset_left = 325.0
 offset_top = 200.0
 offset_right = 825.0
 offset_bottom = 300.0
-text = "Mind Gamer!"
+text = "Mind Game!"
 label_settings = SubResource("LabelSettings_hsg2v")
 horizontal_alignment = 1
 
