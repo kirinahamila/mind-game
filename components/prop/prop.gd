@@ -6,6 +6,7 @@ extends RigidBody2D
 # The number and accuracy of the generated polygons; lower is higher.
 @export_range(0,10) var collision_detail: float = 2
 
+
 func generate_collision_mesh() -> void:
 	var texture := sprite.texture
 	var bitmap := BitMap.new()
@@ -26,7 +27,27 @@ func generate_collision_mesh() -> void:
 func _ready() -> void:
 	pass
 
+func _physics_process(delta: float) -> void:
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_body_entered(body: Node, source: RigidBody2D) -> void:
+	print("COLLIDE")
+	if not (body is Enemy):
+		return
+	
+	
+	var angle_to_body := self.get_angle_to(body.position)
+	var angle_of_movement := self.linear_velocity.angle()
+	
+	var force = self.linear_velocity.length() * self.mass
+	
+	var diff = remap(abs(angle_of_movement - angle_to_body), 0, 180, 0, 1) 
+	
+	var damage = force * diff
+	
+	body.takeDamage(damage)
