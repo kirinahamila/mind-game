@@ -12,6 +12,8 @@
 collision_layer = 321
 collision_mask = 263
 script = ExtResource("1_aiig8")
+propName = "Arrow"
+propDesc = "A little flying spear. "
 
 [node name="hitBox" type="Area2D" parent="." unique_id=340748630]
 collision_layer = 32

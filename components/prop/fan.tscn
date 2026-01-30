@@ -54,6 +54,9 @@ collision_layer = 321
 collision_mask = 257
 script = ExtResource("1_7l2ec")
 propSprite = SubResource("CompressedTexture2D_6js2q")
+propName = "Fan"
+propDesc = "The Fan will push away all objects in front of it!
+Watch out, the fan can topple your own defenses!"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1997523111]
 scale = Vector2(2, 2)

@@ -3,10 +3,6 @@ extends Prop
 @onready var arrow = preload("res://components/prop/arrow.tscn")
 @onready var arrowSpawn = $arrowSpawn
 
-@export var propName = "Crossbow"
-@export var propSprite: Texture2D
-
-var propDesc = "The Crossbow will shoot arrows in front of it that will large amounts of damage and knockback to enemies! \nHowever, these arrows might topple your other defenses if they make contact so watch out!"
 
 var shooting = false
 
