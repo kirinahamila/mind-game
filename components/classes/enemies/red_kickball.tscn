@@ -12,12 +12,19 @@
 [ext_resource type="Texture2D" uid="uid://7gps3rwbtl0i" path="res://assets/textures/effects/explo/kaboom6.png" id="10_t88ib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87j5q"]
+radius = 7.3333335
+height = 21.333334
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjm1v"]
+radius = 8.600093
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjm1v"]
+radius = 8.125
+height = 23.333332
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bu8t8"]
+radius = 8.125
+height = 23.333332
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_87j5q"]
 
@@ -164,7 +171,6 @@ _data = {
 script = ExtResource("1_bu8t8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118333478]
-scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_fjm1v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353615600]

@@ -5,12 +5,19 @@
 [ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="3_4fo42"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ojd4"]
+radius = 7.0
+height = 18.666668
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3n1pg"]
+radius = 8.720367
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fo42"]
+radius = 8.181818
+height = 21.818182
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at3qa"]
+radius = 8.181818
+height = 21.818182
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqf13"]
 bg_color = Color(1, 0, 0, 1)
@@ -22,7 +29,6 @@ bg_color = Color(0.33333325, 1, 0, 1)
 script = ExtResource("1_5ojd4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=365041855]
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_vqf13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=642909352]
