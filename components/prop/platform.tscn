@@ -7,6 +7,7 @@
 size = Vector2(60, 4)
 
 [node name="platform" type="RigidBody2D" unique_id=57734250]
+scale = Vector2(3, 3)
 collision_layer = 833
 collision_mask = 257
 script = ExtResource("1_bif05")
@@ -15,7 +16,9 @@ propName = "Platform"
 metadata/_custom_type_script = "uid://dhgo1yius76t8"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304310895]
+scale = Vector2(5, 5)
 texture = ExtResource("2_bif05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552103791]
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_s8bxr")

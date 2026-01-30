@@ -33,6 +33,7 @@ func restart():
 	spawning = false
 	activeWave = false
 	waveChanging = false
+	clearEnemies()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -80,3 +81,7 @@ func spawnCycle():
 
 func updateLabel():
 	label.text = "Current Wave: " + str(currentWave)
+
+func clearEnemies():
+	for i in levelWaves.get_children().size():
+		levelWaves.get_children()[i].queue_free()

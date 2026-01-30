@@ -9,9 +9,9 @@ extends Node2D
 @onready var propPlacementMenu = $propPlacementMenu
 @onready var gameOverScreen = $gameOverScreen
 
-var gameplay_zoom = 1.25
+var gameplay_zoom = 1.0
 var gameplay_posy = 374
-var placement_zoom = 0.75
+var placement_zoom = 1.0
 var placement_posy = 374
 
 var gameplayElements
@@ -104,6 +104,7 @@ func _on_prop_selection_menu_prop_placement_time() -> void:
 
 func _on_prop_placement_menu_props_placed() -> void:
 	changeGameState("gameplay")
+	playerCharacter.global_position = playerCharacter.startingPosition
 	gameWorld.levelWaves.Wave(gameWorld.enemyPool, 100)
 	gameWorld.activeWave = true
 	camera.position.y = gameplay_posy

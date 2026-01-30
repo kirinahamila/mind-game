@@ -14,6 +14,8 @@ signal dead
 var maxHealth = 100.0
 var health = 100.0
 
+var startingPosition = Vector2(575, 0)
+
 #Base Stats
 var maxSpeed = 200
 var groundAcceleration = 20
@@ -143,3 +145,4 @@ func restart():
 	$weapons/baseballBat/CollisionShape2D.disabled = true
 	maxHealth = 100.0
 	health = 100.0
+	global_position = startingPosition
