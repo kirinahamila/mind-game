@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://tv6nvr8mafqt" path="res://components/screens/game_world.gd" id="1_6p460"]
 [ext_resource type="Texture2D" uid="uid://bbewan8agprs" path="res://assets/textures/map/grass.png" id="3_f3sl2"]
-[ext_resource type="Script" path="res://components/classes/wave.gd" id="3_v4opm"]
+[ext_resource type="Script" uid="uid://dnkyc28pyf6aq" path="res://components/classes/wave.gd" id="3_v4opm"]
 [ext_resource type="Texture2D" uid="uid://doy7dd5ervuko" path="res://assets/textures/map/sky.png" id="4_f3sl2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bvgre"]

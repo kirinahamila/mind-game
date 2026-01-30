@@ -31,7 +31,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	spawnCycle()
 	updateLabel()
-	print(currentWave%5)
 
 func spawnCycle():
 	if !spawning && activeWave:

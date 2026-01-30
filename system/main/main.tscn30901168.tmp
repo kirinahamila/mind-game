@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://gkg6swxubgc4" path="res://components/screens/game_world.tscn" id="3_o6jpp"]
 [ext_resource type="PackedScene" uid="uid://d30wv6bncc75m" path="res://components/player_character/player_character.tscn" id="4_frqux"]
 [ext_resource type="PackedScene" uid="uid://dhbpnjlrsgxv2" path="res://system/ui/selection/prop_selection_menu.tscn" id="5_bp6g8"]
+[ext_resource type="PackedScene" uid="uid://bi2m4kjyf7rcr" path="res://system/ui/placement/prop_placement_menu.tscn" id="6_o6jpp"]
 [ext_resource type="PackedScene" uid="uid://bc2326i03te6u" path="res://system/ui/game_over_screen.tscn" id="7_frqux"]
-[ext_resource type="PackedScene" uid="uid://bi2m4kjyf7rcr" path="res://components/screens/prop_placement_menu.tscn" id="7_tjax2"]
 
 [node name="main" type="Node2D" unique_id=2143028418]
 script = ExtResource("1_qjbxo")
@@ -17,6 +17,8 @@ script = ExtResource("1_qjbxo")
 
 [node name="propSelectionMenu" parent="." unique_id=572619620 instance=ExtResource("5_bp6g8")]
 
+[node name="propPlacementMenu" parent="." unique_id=931240621 instance=ExtResource("6_o6jpp")]
+
 [node name="gameOverScreen" parent="." unique_id=931113666 instance=ExtResource("7_frqux")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=551239718]
@@ -25,10 +27,8 @@ position = Vector2(576, 324)
 [node name="CharacterBody2D" parent="." unique_id=2045797745 instance=ExtResource("4_frqux")]
 position = Vector2(625, -28)
 
-[node name="propPlacementMenu" parent="." unique_id=1310519041 instance=ExtResource("7_tjax2")]
-
 [connection signal="startGame" from="startScreen" to="." method="_on_start_screen_start_game"]
 [connection signal="waveProgress" from="GameWorld" to="." method="_on_game_world_wave_progress"]
 [connection signal="propPlacementTime" from="propSelectionMenu" to="." method="_on_prop_selection_menu_prop_placement_time"]
-[connection signal="dead" from="CharacterBody2D" to="." method="_on_character_body_2d_dead"]
 [connection signal="propsPlaced" from="propPlacementMenu" to="." method="_on_prop_placement_menu_props_placed"]
+[connection signal="dead" from="CharacterBody2D" to="." method="_on_character_body_2d_dead"]

@@ -4,7 +4,7 @@ signal propPlacementTime
 
 @onready var propCard = preload("res://system/ui/prop_card/prop_card.tscn")
 
-@onready var rock = preload("res://components/prop/rockProp.tscn")
+@onready var rock = preload("res://components/prop/rock.tscn")
 @onready var crossbow = preload("res://components/prop/crossbow.tscn")
 @onready var spring = preload("res://components/prop/spring.tscn")
 @onready var platForm = preload("res://components/prop/platform.tscn")

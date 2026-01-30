@@ -1,12 +1,12 @@
-[gd_scene load_steps=0 format=3 uid="uid://bi2m4kjyf7rcr"]
+[gd_scene format=3 uid="uid://d02y5tshnpwl4"]
 
-[ext_resource type="Script" uid="uid://dw7swlw2tp3eh" path="res://components/screens/prop_placement_menu.gd" id="1_orno3"]
+[ext_resource type="Script" uid="uid://dw7swlw2tp3eh" path="res://components/screens/prop_placement_menu.gd" id="1_0rsp4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7sabg"]
 font_size = 40
 
 [node name="propPlacementMenu" type="Node2D" unique_id=1310519041]
-script = ExtResource("1_orno3")
+script = ExtResource("1_0rsp4")
 
 [node name="SelectionPanel" type="Control" parent="." unique_id=1241335051]
 layout_mode = 3
