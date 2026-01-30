@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1oc6hwuabtxi" path="res://assets/textures/props/large/plank.png" id="2_bif05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
+size = Vector2(60, 4)
 
 [node name="platform" type="RigidBody2D" unique_id=57734250]
 collision_layer = 833
@@ -14,9 +15,7 @@ propName = "Platform"
 metadata/_custom_type_script = "uid://dhgo1yius76t8"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=304310895]
-scale = Vector2(6, 3)
 texture = ExtResource("2_bif05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552103791]
-scale = Vector2(19, 1)
 shape = SubResource("RectangleShape2D_s8bxr")

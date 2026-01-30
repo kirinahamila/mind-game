@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d3k8jsjf4ojxl" path="res://assets/textures/props/trap/spring3.png" id="4_kjslv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boyml"]
+size = Vector2(32, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpppm"]
+size = Vector2(16, 11)
 
 [sub_resource type="Animation" id="Animation_m125j"]
 length = 0.001
@@ -55,11 +57,10 @@ propName = "Spring"
 propDesc = "The Spring will launch objects that stand on top of it upwards. \\nIt is useful for getting over your tall defenses."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=918219934]
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_wuiyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1527883701]
-scale = Vector2(2, 1)
+scale = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_boyml")
 
 [node name="launchZone" type="Area2D" parent="." unique_id=282240422]
@@ -67,7 +68,7 @@ collision_layer = 0
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="launchZone" unique_id=1484485204]
-position = Vector2(0, -16)
+position = Vector2(0, -9.25)
 scale = Vector2(2, 0.5)
 shape = SubResource("RectangleShape2D_hpppm")
 

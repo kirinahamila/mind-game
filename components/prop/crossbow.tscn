@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://blmb7ho6yq1os" path="res://assets/textures/props/trap/crossbow.png" id="2_1c7k5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drjl2"]
+radius = 6.0
+height = 16.0
 
 [node name="crossbow" type="RigidBody2D" unique_id=1416310162]
 collision_layer = 833
@@ -15,7 +17,6 @@ propDesc = "The Crossbow will shoot arrows in front of it that will large amount
 However, these arrows might topple your other defenses if they make contact so watch out!"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2093703662]
-scale = Vector2(1.8, 1.5)
 texture = ExtResource("2_1c7k5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067468283]
