@@ -84,6 +84,7 @@ bg_color = Color(0.33333325, 1, 0, 1)
 collision_layer = 266
 collision_mask = 271
 script = ExtResource("1_m6yna")
+pushForce = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977719940]
 shape = SubResource("CapsuleShape2D_q1otq")

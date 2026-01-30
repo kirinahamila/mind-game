@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dcl2cbd0i0m38" path="res://assets/textures/enemies/red_kickball.png" id="1_fjm1v"]
 [ext_resource type="Script" uid="uid://bvwm4ltpenltr" path="res://components/attack/attack.gd" id="2_87j5q"]
 [ext_resource type="Texture2D" uid="uid://kc33wxb4c156" path="res://assets/textures/effects/Explosion_Spritesheet1.png" id="4_2sg61"]
-[ext_resource type="Texture2D" uid="uid://c0org6lvjpf2e" path="res://assets/textures/effects/Explosion_Spritesheet2.png" id="5_xjduy"]
-[ext_resource type="Texture2D" uid="uid://7jowgbn055of" path="res://assets/textures/effects/Explosion_Spritesheet3.png" id="6_pfbw1"]
-[ext_resource type="Texture2D" uid="uid://b6rmswef1noqb" path="res://assets/textures/effects/Explosion_Spritesheet4.png" id="7_l5846"]
-[ext_resource type="Texture2D" uid="uid://bm6sqdvn4onav" path="res://assets/textures/effects/Explosion_Spritesheet5.png" id="8_pfbw1"]
-[ext_resource type="Texture2D" uid="uid://dr5yxhft1a0dx" path="res://assets/textures/effects/Explosion_Spritesheet6.png" id="9_l5846"]
+[ext_resource type="Texture2D" uid="uid://d02hw1ceajyiq" path="res://assets/textures/effects/explo/kaboom1.png" id="5_l5846"]
+[ext_resource type="Texture2D" uid="uid://4pubbnrr8a4m" path="res://assets/textures/effects/explo/kaboom2.png" id="6_ct3bn"]
+[ext_resource type="Texture2D" uid="uid://eysrvrrqlrh1" path="res://assets/textures/effects/explo/kaboom3.png" id="7_t88ib"]
+[ext_resource type="Texture2D" uid="uid://cqqogwjoilm15" path="res://assets/textures/effects/explo/kaboom4.png" id="8_l5846"]
+[ext_resource type="Texture2D" uid="uid://kij3ng06q2bq" path="res://assets/textures/effects/explo/kaboom5.png" id="9_ct3bn"]
+[ext_resource type="Texture2D" uid="uid://7gps3rwbtl0i" path="res://assets/textures/effects/explo/kaboom6.png" id="10_t88ib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87j5q"]
 
@@ -114,7 +115,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -126,7 +127,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(6.5, 6.5), Vector2(5, 5), Vector2(10, 10), Vector2(13, 13), Vector2(21, 21)]
+"values": [Vector2(10, 10), Vector2(13, 13), Vector2(15, 15), Vector2(17, 17), Vector2(19, 19)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -138,7 +139,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_2sg61"), ExtResource("5_xjduy"), ExtResource("6_pfbw1"), ExtResource("7_l5846"), ExtResource("8_pfbw1"), ExtResource("9_l5846")]
+"values": [ExtResource("5_l5846"), ExtResource("6_ct3bn"), ExtResource("7_t88ib"), ExtResource("8_l5846"), ExtResource("9_ct3bn"), ExtResource("10_t88ib")]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -150,7 +151,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0rafg"]
@@ -216,7 +217,7 @@ shape = SubResource("CircleShape2D_87j5q")
 
 [node name="Sprite2D" type="Sprite2D" parent="explosion" unique_id=2142209069]
 visible = false
-scale = Vector2(1.5, 1.5)
+scale = Vector2(4, 4)
 texture = ExtResource("4_2sg61")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=407241829]

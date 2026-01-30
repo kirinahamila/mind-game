@@ -37,7 +37,7 @@ func updateHotbar():
 	for i in f:
 		var newCard = propCard.instantiate()
 		grid.add_child(newCard)
-		newCard.PropCard(curProps[i].propName, curProps[i].propSprite)
+		newCard.PropCard(curProps[i].propName, curProps[i].propSprite, curProps[i].propDesc)
 
 func clearGrid():
 	var f = grid.get_child_count()
