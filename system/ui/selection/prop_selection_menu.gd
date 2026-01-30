@@ -65,7 +65,7 @@ func makeCards(propArray):
 		var newCard = propCard.instantiate()
 		var propType = propArray[i].instantiate()
 		grid.add_child(newCard)
-		newCard.PropCard(propType.propName, propType.propSprite)
+		newCard.PropCard(propType.propName, propType.propSprite, propType.propDesc)
 
 func findSelectedProp():
 	if Input.is_action_just_pressed("place") && defenseNum > 0:
