@@ -11,8 +11,7 @@ collision_mask = 775
 script = ExtResource("1_o8gqh")
 propSprite = ExtResource("2_3okdn")
 propName = "Rock"
-propDesc = "The Rock is a sturdy and large block you can place to do anything.
-You might use it to build walls, support your other defenses, or build a fortress!"
+propDesc = "The Rock is a sturdy and large block you can place to do anything. \\nYou might use it to build walls, support your other defenses, or build a fortress!"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=122494894]
 position = Vector2(0, -3)
